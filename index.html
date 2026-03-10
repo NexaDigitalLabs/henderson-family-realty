@@ -105,13 +105,30 @@
     overflow: hidden;
     padding: 120px 5% 80px;
   }
-  .hero-bg {
+  .hero-video-wrap {
     position: absolute;
     inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: #080A0F;
+  }
+  .hero-video-wrap iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* 16:9 ratio */
+    min-height: 100vh;
+    min-width: 177.78vh; /* 16:9 ratio */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
     background: 
-      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(65,105,168,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(28,43,74,0.4) 0%, transparent 50%),
-      linear-gradient(135deg, #080A0F 0%, #0D1420 40%, #111824 100%);
+      linear-gradient(135deg, rgba(8,10,15,0.82) 0%, rgba(8,10,15,0.55) 50%, rgba(8,10,15,0.75) 100%);
   }
   .hero-grid-overlay {
     position: absolute;
@@ -124,7 +141,7 @@
   }
   .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -979,7 +996,16 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
+  <!-- VIDEO BACKGROUND -->
+  <div class="hero-video-wrap">
+    <iframe id="heroBgVideo"
+      src="https://www.youtube.com/embed/4eTPDm_VyaA?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&playlist=4eTPDm_VyaA&enablejsapi=1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="hero-video-overlay"></div>
   <div class="hero-grid-overlay"></div>
   <div class="hero-content">
     <div class="hero-left fade-up">
