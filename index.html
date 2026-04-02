@@ -377,7 +377,7 @@
           </div>
           <div class="about-contact-item">
             <span class="about-contact-label">Email</span>
-            <a href="/cdn-cgi/l/email-protection#305154515d705856421e585f5d5543" class="about-contact-value"><span class="__cf_email__" data-cfemail="d1b0b5b0bc91b9b7a3ffb9bebcb4a2">[email&#160;protected]</span></a>
+            <a href="mailto:adam@hfr.homes" class="about-contact-value">adam@hfr.homes</a>
           </div>
           <div class="about-contact-item">
             <span class="about-contact-label">Service Area</span>
@@ -477,7 +477,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:9512408126">951-240-8126</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#a6c7c2c7cbe6cec0d488cec9cbc3d5"><span class="__cf_email__" data-cfemail="e9888d8884a9818f9bc78186848c9a">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:adam@hfr.homes">adam@hfr.homes</a></li>
         <li><a href="#">DRE# 02073962</a></li>
         <li><a href="https://facebook.com/hendersonfamilyrealty" target="_blank">@hendersonfamilyrealty</a></li>
       </ul>
@@ -485,17 +485,13 @@
   </div>
   <div class="footer-bottom">
     <p>© 2025 Henderson Family Realty. All rights reserved. | Adam Henderson, DRE# 02073962</p>
-    <p style="margin-top:6px;font-size:0.75rem;">
-      <a href="privacy.html" style="color:var(--gray);text-decoration:none;margin-right:16px;">Privacy Policy</a>
-      <a href="terms.html" style="color:var(--gray);text-decoration:none;">Terms of Service</a>
-    </p>
     <div class="cb-logo-wrap">
       <img src="images/cb-logo.png" alt="Coldwell Banker Associated Brokers Realty">
     </div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const AV_KEY = 'SZMNQYDTGKAL3CSQ';
 
 // ── NAV SCROLL ──
@@ -657,4 +653,18 @@ function renderRates(rates) {
   if(r5apr) r5apr.textContent = 'Initial Period Rate · Source: Mortgage News Daily';
   // ticker
   const t30 = document.getElementById('rate30');
-  con
+  const t15 = document.getElementById('rate15');
+  if(t30) t30.textContent = rates.r30.toFixed(2) + '%';
+  if(t15) t15.textContent = rates.r15.toFixed(2) + '%';
+}
+
+// ── INIT ──
+loadBTC();
+loadMetals();
+loadSP500();
+loadMortgageRates();
+// Refresh every 5 min
+setInterval(() => { loadBTC(); loadMetals(); loadSP500(); }, 300000);
+</script>
+</body>
+</html>
