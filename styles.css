@@ -140,14 +140,17 @@
     background:
       linear-gradient(135deg, rgba(8,10,15,0.82) 0%, rgba(8,10,15,0.55) 50%, rgba(8,10,15,0.75) 100%);
   }
-  .hero-grid-overlay {
+  /* Renamed from .hero-grid-overlay when the graph-paper pattern was dropped
+     site-wide. Kept far fainter than the CTA banner's bloom: this one sits on
+     top of moving video, so anything stronger washes the footage out and eats
+     contrast under the headline. The bloom is offset left, behind the text,
+     rather than centred. */
+  .hero-glow-overlay {
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(65,105,168,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(65,105,168,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    background:
+      radial-gradient(ellipse 55% 75% at 28% 42%,
+        rgba(120,165,230,0.10) 0%, transparent 70%);
   }
   .hero-content {
     position: relative;
@@ -941,14 +944,20 @@
     position: relative;
     overflow: hidden;
   }
+  /* Soft overhead bloom, replacing the 40px graph-paper grid this used to
+     carry. Two stacked radials rather than a pattern: a broad warm-blue wash
+     centred above the headline, and a wider, fainter one that keeps the lower
+     corners from going flat. Pure gradient means no tiling seams at any
+     viewport width and nothing to re-scale on mobile. */
   .cta-banner::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background:
+      radial-gradient(ellipse 70% 130% at 50% -20%,
+        rgba(120,165,230,0.20) 0%, rgba(120,165,230,0.07) 45%, transparent 72%),
+      radial-gradient(ellipse 120% 90% at 50% 115%,
+        rgba(91,132,196,0.10) 0%, transparent 65%);
   }
   .cta-banner-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
   .cta-banner h2 {

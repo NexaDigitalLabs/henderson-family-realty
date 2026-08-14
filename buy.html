@@ -245,10 +245,15 @@
     padding: 60px 5%; text-align: center;
     position: relative; overflow: hidden;
   }
+  /* Soft overhead bloom — matches .cta-banner::before in styles.css. Keep the
+     two in step if either is retuned. */
   .download-banner::before {
     content: ''; position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background:
+      radial-gradient(ellipse 70% 130% at 50% -20%,
+        rgba(120,165,230,0.20) 0%, rgba(120,165,230,0.07) 45%, transparent 72%),
+      radial-gradient(ellipse 120% 90% at 50% 115%,
+        rgba(91,132,196,0.10) 0%, transparent 65%);
   }
   .download-banner-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
   .download-banner h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 1rem; }
