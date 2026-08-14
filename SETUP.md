@@ -37,12 +37,27 @@ If you later decide the $20/mo is worth a branded sender: Resend → Domains →
 Add Domain → `hfr.homes`, add the MX + SPF + DKIM records at your registrar, then
 set `LEAD_FROM_EMAIL=Henderson Family Realty <website@hfr.homes>`.
 
-### Rotate the old Alpha Vantage key
+### The old Alpha Vantage key — closed, no action possible
 
-The previous build had this key hardcoded in public JavaScript:
-`SZMNQYDTGKAL3CSQ`. It has been removed from the codebase, but it was publicly
-visible for as long as the site was live. **Revoke it at alphavantage.co.**
-Nothing uses Alpha Vantage anymore — FRED replaced it.
+An earlier build hardcoded an Alpha Vantage key in public JavaScript, so it was
+readable for as long as that build was live. It has been out of the codebase
+since 2026-08-11, and nothing uses Alpha Vantage at all now — FRED replaced it.
+
+**It cannot be revoked, and does not need to be.** Alpha Vantage issues free
+keys from an email form with no account behind them: there is no login, no
+dashboard, and no self-service way to revoke, regenerate or delete one. Trying
+to "log in and revoke it" is a dead end — that is not a lost password, there is
+simply nothing to log into.
+
+The exposure is also close to nil. A free key reaches nothing but public stock
+market data on a shared rate limit. There is no billing attached, no personal
+data behind it, and no account to take over. Worst case, a stranger burns daily
+quota on a key this site stopped calling months ago.
+
+If you want it formally closed anyway, email **support@alphavantage.co** and ask
+them to deactivate it — that is the only route, and it is optional. The key
+string itself is deliberately not repeated here: this repo is public, and
+writing it down again would be the only thing keeping it in circulation.
 
 ---
 
