@@ -3,28 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Henderson Family Realty | Temecula & Murrieta Real Estate</title>
+<title>Temecula &amp; Murrieta Real Estate | Henderson Family Realty</title>
+<meta name="description" content="Adam Henderson, Realtor® (DRE# 02073962) — local expert for Temecula, Murrieta, Menifee, Lake Elsinore, Wildomar &amp; Winchester. Live market data, honest guidance, and family-first service.">
+<link rel="canonical" href="https://www.hendersonfamilyrealty.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080A0F">
+<meta name="geo.region" content="US-CA">
+<meta name="geo.placename" content="Temecula, California">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Henderson Family Realty">
+<meta property="og:url" content="https://www.hendersonfamilyrealty.com/">
+<meta property="og:title" content="Temecula &amp; Murrieta Real Estate | Henderson Family Realty">
+<meta property="og:description" content="Local expertise. Real data. A trusted advisor who knows every neighborhood in Southwest Riverside County.">
+<meta property="og:image" content="https://www.hendersonfamilyrealty.com/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Temecula &amp; Murrieta Real Estate | Henderson Family Realty">
+<meta name="twitter:description" content="Local expertise. Real data. A trusted advisor who knows Southwest Riverside County.">
+<meta name="twitter:image" content="https://www.hendersonfamilyrealty.com/images/og-cover.jpg">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Home-screen icon. iOS needs a square PNG (it will not take the WebP
+     and applies its own rounded mask); Android reads the manifest. -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="mobile-bar.css">
+<link rel="preload" as="image" href="images/hero-poster.webp" fetchpriority="high">
+
+<!-- Vercel Web Analytics. Served from this origin, so no third-party request,
+     no cookie, and nothing for a consent banner to gate. Must also be switched
+     on under Project → Analytics in the Vercel dashboard or the route 404s and
+     the script quietly does nothing. -->
+<script defer src="/_vercel/insights/script.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://www.hendersonfamilyrealty.com/#agency",
+      "name": "Henderson Family Realty",
+      "description": "Real estate services for Temecula, Murrieta, Menifee, Lake Elsinore, Wildomar and Winchester, California.",
+      "url": "https://www.hendersonfamilyrealty.com/",
+      "logo": "https://www.hendersonfamilyrealty.com/images/logo.webp",
+      "image": "https://www.hendersonfamilyrealty.com/images/headshot.webp",
+      "telephone": "+1-951-240-8126",
+      "email": "adam@hfr.homes",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Temecula",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Temecula", "addressRegion": "CA" },
+        { "@type": "City", "name": "Murrieta", "addressRegion": "CA" },
+        { "@type": "City", "name": "Menifee", "addressRegion": "CA" },
+        { "@type": "City", "name": "Lake Elsinore", "addressRegion": "CA" },
+        { "@type": "City", "name": "Wildomar", "addressRegion": "CA" },
+        { "@type": "City", "name": "Winchester", "addressRegion": "CA" }
+      ],
+      "employee": { "@id": "https://www.hendersonfamilyrealty.com/#adam" },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Coldwell Banker Associated Brokers Realty"
+      },
+      "sameAs": [
+        "https://facebook.com/hendersonfamilyrealty",
+        "https://instagram.com/hendersonfamilyrealty"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hendersonfamilyrealty.com/#adam",
+      "name": "Adam Henderson",
+      "jobTitle": "Realtor®",
+      "image": "https://www.hendersonfamilyrealty.com/images/headshot.webp",
+      "telephone": "+1-951-240-8126",
+      "email": "adam@hfr.homes",
+      "identifier": "CA DRE# 02073962",
+      "worksFor": { "@id": "https://www.hendersonfamilyrealty.com/#agency" }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://www.hendersonfamilyrealty.com/",
+      "name": "Henderson Family Realty",
+      "publisher": { "@id": "https://www.hendersonfamilyrealty.com/#agency" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="mainNav">
   <div class="nav-logo">
-    <img src="images/logo.png" alt="Henderson Family Realty">
+    <a href="index.html" aria-label="Henderson Family Realty — home">
+      <img src="images/logo.webp" alt="Henderson Family Realty" width="126" height="52" fetchpriority="high">
+    </a>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html" aria-current="page">Home</a></li>
     <li><a href="buy.html">Buy</a></li>
     <li><a href="sell.html">Sell</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get Started</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+  <button class="hamburger" id="hamburger" onclick="toggleNav()"
+          aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html">Home</a>
@@ -36,14 +136,28 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <!-- VIDEO BACKGROUND -->
+  <!--
+    Self-hosted background video. Replaces the previous YouTube iframe, which
+    always began playback at a low adaptive-streaming rendition (~144-360p) and
+    was then scaled to cover the viewport — the cause of the few seconds of blur.
+    The poster paints instantly at full sharpness so there is no soft-focus moment.
+    See SETUP.md for the ffmpeg encode commands.
+  -->
   <div class="hero-video-wrap">
-    <iframe id="heroBgVideo"
-      src="https://www.youtube.com/embed/4eTPDm_VyaA?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&playlist=4eTPDm_VyaA&enablejsapi=1"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <!--
+      Sources are chosen in JS rather than with `media` attributes on <source>:
+      browser support for that is inconsistent and it is evaluated only once at
+      load, so it can't respond to rotation or resize. Phones get a 720p cut at
+      roughly a third the weight of the desktop file.
+    -->
+    <video id="heroVideo" class="hero-video"
+           poster="images/hero-poster.webp"
+           autoplay muted loop playsinline preload="none"
+           aria-hidden="true" tabindex="-1"
+           data-desktop-webm="video/hero.webm"
+           data-desktop-mp4="video/hero.mp4"
+           data-mobile-webm="video/hero-mobile.webm"
+           data-mobile-mp4="video/hero-mobile.mp4"></video>
   </div>
   <div class="hero-video-overlay"></div>
   <div class="hero-grid-overlay"></div>
@@ -56,7 +170,7 @@
         <em>Right Home.</em>
       </h1>
       <p class="hero-sub">
-        Local expertise. Real data. A trusted advisor who knows every neighborhood, 
+        Local expertise. Real data. A trusted advisor who knows every neighborhood,
         every street, and exactly what your family needs to make the best move.
       </p>
       <div class="hero-actions">
@@ -66,7 +180,9 @@
     </div>
     <div class="hero-right fade-up">
       <div class="hero-photo-wrap">
-        <img class="hero-photo" src="images/headshot.png" alt="Adam Henderson - Henderson Family Realty">
+        <img class="hero-photo" src="images/headshot.webp"
+             alt="Adam Henderson, Realtor with Henderson Family Realty"
+             width="380" height="380">
         <div class="hero-badge">
           <div class="badge-num">SW</div>
           <div class="badge-label">Riverside County<br>Local Expert</div>
@@ -79,64 +195,73 @@
 <!-- HOME SEARCH -->
 <div class="search-section">
   <div class="search-inner">
-    <p class="search-label">Search Homes for Sale</p>
+    <label class="search-label" for="searchInput">Search Homes for Sale</label>
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search by city, zip code, address, or neighborhood..." />
-      <select id="searchType">
+      <select id="searchType" aria-label="Listing type">
         <option value="">All Types</option>
         <option value="buy">For Sale</option>
         <option value="rent">For Rent</option>
         <option value="sold">Recently Sold</option>
       </select>
       <button class="search-btn" onclick="doSearch()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         Search
       </button>
     </div>
     <div class="search-quick">
-      <a href="#" onclick="quickSearch('Temecula, CA')">Temecula</a><span>·</span>
-      <a href="#" onclick="quickSearch('Murrieta, CA')">Murrieta</a><span>·</span>
-      <a href="#" onclick="quickSearch('Menifee, CA')">Menifee</a><span>·</span>
-      <a href="#" onclick="quickSearch('Lake Elsinore, CA')">Lake Elsinore</a><span>·</span>
-      <a href="#" onclick="quickSearch('92592')">92592</a><span>·</span>
-      <a href="#" onclick="quickSearch('92563')">92563</a><span>·</span>
-      <a href="#" onclick="quickSearch('92562')">92562</a>
+      <a href="#" onclick="quickSearch('Temecula, CA');return false">Temecula</a><span>·</span>
+      <a href="#" onclick="quickSearch('Murrieta, CA');return false">Murrieta</a><span>·</span>
+      <a href="#" onclick="quickSearch('Menifee, CA');return false">Menifee</a><span>·</span>
+      <a href="#" onclick="quickSearch('Lake Elsinore, CA');return false">Lake Elsinore</a><span>·</span>
+      <a href="#" onclick="quickSearch('92592');return false">92592</a><span>·</span>
+      <a href="#" onclick="quickSearch('92563');return false">92563</a><span>·</span>
+      <a href="#" onclick="quickSearch('92562');return false">92562</a>
     </div>
   </div>
 </div>
 
-<!-- MARKET TICKER -->
-<div class="market-strip">
-  <div class="market-strip-inner" id="marketTicker">
-    <div class="market-item">
-      <span class="market-item-label">S&P 500</span>
-      <span class="market-item-value" id="sp500">—</span>
-      <span class="market-item-change" id="sp500-chg"><span class="spinner"></span></span>
-    </div>
-    <div class="market-item">
-      <span class="market-item-label">Bitcoin</span>
-      <span class="market-item-value" id="btc">—</span>
-      <span class="market-item-change" id="btc-chg"><span class="spinner"></span></span>
-    </div>
-    <div class="market-item">
-      <span class="market-item-label">Gold / oz</span>
-      <span class="market-item-value" id="gold">—</span>
-      <span class="market-item-change" id="gold-chg"><span class="spinner"></span></span>
-    </div>
-    <div class="market-item">
-      <span class="market-item-label">Silver / oz</span>
-      <span class="market-item-value" id="silver">—</span>
-      <span class="market-item-change" id="silver-chg"><span class="spinner"></span></span>
-    </div>
-    <div class="market-item">
-      <span class="market-item-label">30yr Fixed</span>
-      <span class="market-item-value" id="rate30">—</span>
-      <span class="market-item-change neutral" id="rate30-lbl">avg</span>
-    </div>
-    <div class="market-item">
-      <span class="market-item-label">15yr Fixed</span>
-      <span class="market-item-value" id="rate15">—</span>
-      <span class="market-item-change neutral" id="rate15-lbl">avg</span>
+<!-- MARKET TICKER — continuous scroll.
+     Values are addressed by data-t / data-c rather than id, because the group is
+     duplicated at runtime to make the loop seamless and ids must stay unique. -->
+<div class="market-strip" id="marketStrip">
+  <div class="market-strip-track" id="marketTrack">
+    <div class="market-strip-group">
+      <div class="market-item">
+        <span class="market-item-label">30yr Fixed</span>
+        <span class="market-item-value" data-t="rate30">—</span>
+        <span class="market-item-change neutral" data-c="rate30">·</span>
+      </div>
+      <div class="market-item">
+        <span class="market-item-label">15yr Fixed</span>
+        <span class="market-item-value" data-t="rate15">—</span>
+        <span class="market-item-change neutral" data-c="rate15">·</span>
+      </div>
+      <div class="market-item">
+        <span class="market-item-label">10yr Treasury</span>
+        <span class="market-item-value" data-t="us10y">—</span>
+        <span class="market-item-change neutral" data-c="us10y">·</span>
+      </div>
+      <div class="market-item">
+        <span class="market-item-label">S&amp;P 500</span>
+        <span class="market-item-value" data-t="sp500">—</span>
+        <span class="market-item-change neutral" data-c="sp500">·</span>
+      </div>
+      <div class="market-item">
+        <span class="market-item-label">Bitcoin</span>
+        <span class="market-item-value" data-t="btc">—</span>
+        <span class="market-item-change neutral" data-c="btc">·</span>
+      </div>
+      <div class="market-item">
+        <span class="market-item-label">Gold / oz</span>
+        <span class="market-item-value" data-t="gold">—</span>
+        <span class="market-item-change neutral" data-c="gold">·</span>
+      </div>
+      <div class="market-item">
+        <span class="market-item-label">Silver / oz</span>
+        <span class="market-item-value" data-t="silver">—</span>
+        <span class="market-item-change neutral" data-c="silver">·</span>
+      </div>
     </div>
   </div>
 </div>
@@ -146,190 +271,166 @@
   <div class="section-inner">
     <div class="hv-header fade-up">
       <div>
-        <p class="section-eyebrow">Live Market Data</p>
+        <p class="section-eyebrow">Local Market Data</p>
         <h2 class="section-title">Local Home Values</h2>
-        <p class="section-sub">Real-time median prices across Southwest Riverside County. Know exactly what the market is doing before you make your move.</p>
+        <p class="section-sub">Median sale prices across Southwest Riverside County. Know exactly what the market is doing before you make your move.</p>
       </div>
       <a href="contact.html" class="btn-outline">Get Your Home's Value →</a>
     </div>
-    <div class="hv-grid fade-up">
-      <div class="hv-card">
-        <p class="hv-city">Temecula, CA · 92592/92591</p>
-        <p class="hv-price" id="tem-price">$719,000</p>
-        <p class="hv-change up" id="tem-change">↑ +3.2% year over year</p>
+
+    <!--
+      Cards render with a labelled fallback and are upgraded in place by
+      /api/market. Each card states the exact zip its figure was measured in.
+    -->
+    <div class="hv-grid fade-up" id="hvGrid">
+      <div class="hv-card" data-market="temecula">
+        <p class="hv-city">Temecula, CA · <span data-field="zip">92592</span></p>
+        <p class="hv-price" data-field="price">$719,000</p>
+        <p class="hv-change" data-field="yoy">—</p>
         <div class="hv-stats">
-          <div>
-            <p class="hv-stat-label">Avg Days on Market</p>
-            <p class="hv-stat-val" id="tem-dom">28 days</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Active Listings</p>
-            <p class="hv-stat-val" id="tem-active">142</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Price/Sq Ft</p>
-            <p class="hv-stat-val">$348</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Market Temp</p>
-            <p class="hv-stat-val" style="color:#E8A838">Balanced</p>
-          </div>
+          <div><p class="hv-stat-label">Median Days on Market</p><p class="hv-stat-val" data-field="dom">28 days</p></div>
+          <div><p class="hv-stat-label">Active Listings</p><p class="hv-stat-val" data-field="active">142</p></div>
+          <div><p class="hv-stat-label">Price/Sq Ft</p><p class="hv-stat-val" data-field="ppsf">$348</p></div>
+          <div><p class="hv-stat-label">Market Temp</p><p class="hv-stat-val" data-field="temp">Balanced</p></div>
         </div>
       </div>
-      <div class="hv-card">
-        <p class="hv-city">Murrieta, CA · 92562/92563</p>
-        <p class="hv-price" id="mur-price">$649,000</p>
-        <p class="hv-change up" id="mur-change">↑ +2.8% year over year</p>
+      <div class="hv-card" data-market="murrieta">
+        <p class="hv-city">Murrieta, CA · <span data-field="zip">92562</span></p>
+        <p class="hv-price" data-field="price">$649,000</p>
+        <p class="hv-change" data-field="yoy">—</p>
         <div class="hv-stats">
-          <div>
-            <p class="hv-stat-label">Avg Days on Market</p>
-            <p class="hv-stat-val">32 days</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Active Listings</p>
-            <p class="hv-stat-val">118</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Price/Sq Ft</p>
-            <p class="hv-stat-val">$318</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Market Temp</p>
-            <p class="hv-stat-val" style="color:#E8A838">Balanced</p>
-          </div>
+          <div><p class="hv-stat-label">Median Days on Market</p><p class="hv-stat-val" data-field="dom">32 days</p></div>
+          <div><p class="hv-stat-label">Active Listings</p><p class="hv-stat-val" data-field="active">118</p></div>
+          <div><p class="hv-stat-label">Price/Sq Ft</p><p class="hv-stat-val" data-field="ppsf">$318</p></div>
+          <div><p class="hv-stat-label">Market Temp</p><p class="hv-stat-val" data-field="temp">Balanced</p></div>
         </div>
       </div>
-      <div class="hv-card">
-        <p class="hv-city">Menifee, CA · 92584/92585</p>
-        <p class="hv-price">$549,000</p>
-        <p class="hv-change up">↑ +4.1% year over year</p>
+      <div class="hv-card" data-market="menifee">
+        <p class="hv-city">Menifee, CA · <span data-field="zip">92584</span></p>
+        <p class="hv-price" data-field="price">$549,000</p>
+        <p class="hv-change" data-field="yoy">—</p>
         <div class="hv-stats">
-          <div>
-            <p class="hv-stat-label">Avg Days on Market</p>
-            <p class="hv-stat-val">24 days</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Active Listings</p>
-            <p class="hv-stat-val">96</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Price/Sq Ft</p>
-            <p class="hv-stat-val">$285</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Market Temp</p>
-            <p class="hv-stat-val" style="color:#4CAF79">Seller's</p>
-          </div>
+          <div><p class="hv-stat-label">Median Days on Market</p><p class="hv-stat-val" data-field="dom">24 days</p></div>
+          <div><p class="hv-stat-label">Active Listings</p><p class="hv-stat-val" data-field="active">96</p></div>
+          <div><p class="hv-stat-label">Price/Sq Ft</p><p class="hv-stat-val" data-field="ppsf">$285</p></div>
+          <div><p class="hv-stat-label">Market Temp</p><p class="hv-stat-val" data-field="temp">Seller's</p></div>
         </div>
       </div>
-      <div class="hv-card">
-        <p class="hv-city">Wildomar, CA · 92595</p>
-        <p class="hv-price">$589,000</p>
-        <p class="hv-change up">↑ +2.1% year over year</p>
+      <div class="hv-card" data-market="wildomar">
+        <p class="hv-city">Wildomar, CA · <span data-field="zip">92595</span></p>
+        <p class="hv-price" data-field="price">$589,000</p>
+        <p class="hv-change" data-field="yoy">—</p>
         <div class="hv-stats">
-          <div>
-            <p class="hv-stat-label">Avg Days on Market</p>
-            <p class="hv-stat-val">38 days</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Active Listings</p>
-            <p class="hv-stat-val">54</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Price/Sq Ft</p>
-            <p class="hv-stat-val">$295</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Market Temp</p>
-            <p class="hv-stat-val" style="color:#E8A838">Balanced</p>
-          </div>
+          <div><p class="hv-stat-label">Median Days on Market</p><p class="hv-stat-val" data-field="dom">38 days</p></div>
+          <div><p class="hv-stat-label">Active Listings</p><p class="hv-stat-val" data-field="active">54</p></div>
+          <div><p class="hv-stat-label">Price/Sq Ft</p><p class="hv-stat-val" data-field="ppsf">$295</p></div>
+          <div><p class="hv-stat-label">Market Temp</p><p class="hv-stat-val" data-field="temp">Balanced</p></div>
         </div>
       </div>
-      <div class="hv-card">
-        <p class="hv-city">Lake Elsinore, CA · 92530</p>
-        <p class="hv-price">$489,000</p>
-        <p class="hv-change up">↑ +5.0% year over year</p>
+      <div class="hv-card" data-market="lakeelsinore">
+        <p class="hv-city">Lake Elsinore, CA · <span data-field="zip">92530</span></p>
+        <p class="hv-price" data-field="price">$489,000</p>
+        <p class="hv-change" data-field="yoy">—</p>
         <div class="hv-stats">
-          <div>
-            <p class="hv-stat-label">Avg Days on Market</p>
-            <p class="hv-stat-val">21 days</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Active Listings</p>
-            <p class="hv-stat-val">87</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Price/Sq Ft</p>
-            <p class="hv-stat-val">$265</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Market Temp</p>
-            <p class="hv-stat-val" style="color:#4CAF79">Seller's</p>
-          </div>
+          <div><p class="hv-stat-label">Median Days on Market</p><p class="hv-stat-val" data-field="dom">21 days</p></div>
+          <div><p class="hv-stat-label">Active Listings</p><p class="hv-stat-val" data-field="active">87</p></div>
+          <div><p class="hv-stat-label">Price/Sq Ft</p><p class="hv-stat-val" data-field="ppsf">$265</p></div>
+          <div><p class="hv-stat-label">Market Temp</p><p class="hv-stat-val" data-field="temp">Seller's</p></div>
         </div>
       </div>
-      <div class="hv-card">
-        <p class="hv-city">Winchester, CA · 92596</p>
-        <p class="hv-price">$619,000</p>
-        <p class="hv-change down">↓ -0.8% year over year</p>
+      <div class="hv-card" data-market="winchester">
+        <p class="hv-city">Winchester, CA · <span data-field="zip">92596</span></p>
+        <p class="hv-price" data-field="price">$619,000</p>
+        <p class="hv-change" data-field="yoy">—</p>
         <div class="hv-stats">
-          <div>
-            <p class="hv-stat-label">Avg Days on Market</p>
-            <p class="hv-stat-val">45 days</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Active Listings</p>
-            <p class="hv-stat-val">61</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Price/Sq Ft</p>
-            <p class="hv-stat-val">$302</p>
-          </div>
-          <div>
-            <p class="hv-stat-label">Market Temp</p>
-            <p class="hv-stat-val" style="color:#5B8EE0">Buyer's</p>
-          </div>
+          <div><p class="hv-stat-label">Median Days on Market</p><p class="hv-stat-val" data-field="dom">45 days</p></div>
+          <div><p class="hv-stat-label">Active Listings</p><p class="hv-stat-val" data-field="active">61</p></div>
+          <div><p class="hv-stat-label">Price/Sq Ft</p><p class="hv-stat-val" data-field="ppsf">$302</p></div>
+          <div><p class="hv-stat-label">Market Temp</p><p class="hv-stat-val" data-field="temp">Buyer's</p></div>
         </div>
       </div>
     </div>
-    <p class="hv-updated" id="hv-updated">Market data refreshed regularly. For the most current figures, contact Adam directly.</p>
+    <p class="hv-updated" id="hv-updated">Figures shown are reference estimates. For a valuation of your specific home, contact Adam directly.</p>
   </div>
 </section>
-
-
 
 <!-- MORTGAGE RATES -->
 <section class="rates" id="rates">
   <div class="section-inner">
     <p class="section-eyebrow">Current Lending</p>
     <h2 class="section-title fade-up">Today's Mortgage Rates</h2>
-    <p class="section-sub fade-up">Live rates updated daily by Mortgage News Daily — the most respected independent rate tracker in the industry. Contact Adam to connect with a trusted local California lender for your personalized quote.</p>
+    <p class="section-sub fade-up">National averages from Freddie Mac's Primary Mortgage Market Survey — the industry benchmark, published every Thursday. Contact Adam to connect with a trusted local California lender for your personalized quote.</p>
     <div class="rates-grid fade-up" style="margin-bottom:2rem">
-      <div class="rate-card">
+      <div class="rate-card featured">
         <p class="rate-type">30-Year Fixed</p>
         <p class="rate-number" id="r30-display"><span class="spinner"></span></p>
-        <p class="rate-apr" id="r30-apr"></p>
+        <p class="rate-apr" id="r30-apr">Loading current rate…</p>
         <p class="rate-desc">The most popular loan for homebuyers. Predictable payments over 30 years. Best for long-term buyers who value stability.</p>
         <a href="contact.html" class="rate-cta">Get a CA Rate Quote</a>
       </div>
-      <div class="rate-card featured">
+      <div class="rate-card">
         <p class="rate-type">15-Year Fixed</p>
         <p class="rate-number" id="r15-display"><span class="spinner"></span></p>
-        <p class="rate-apr" id="r15-apr"></p>
+        <p class="rate-apr" id="r15-apr">Loading current rate…</p>
         <p class="rate-desc">Build equity faster. Higher monthly payment, but you own your home outright in half the time with a lower rate.</p>
         <a href="contact.html" class="rate-cta">Get a CA Rate Quote</a>
       </div>
       <div class="rate-card">
-        <p class="rate-type">5/1 ARM</p>
-        <p class="rate-number" id="r5arm-display"><span class="spinner"></span></p>
-        <p class="rate-apr" id="r5arm-apr"></p>
-        <p class="rate-desc">Fixed for 5 years, then adjusts annually. Lower initial rate — good if you plan to sell or refinance within 5 years.</p>
-        <a href="contact.html" class="rate-cta">Get a CA Rate Quote</a>
+        <p class="rate-type">10-Year Treasury</p>
+        <p class="rate-number" id="r10y-display"><span class="spinner"></span></p>
+        <p class="rate-apr" id="r10y-apr">Loading…</p>
+        <p class="rate-desc">Mortgage rates track this benchmark closely. When the 10-year yield moves, fixed mortgage rates usually follow within days — a useful early signal on where rates are heading.</p>
+        <a href="contact.html" class="rate-cta">Ask Adam What This Means</a>
       </div>
     </div>
-    <div style="background:var(--gray-dark);border:1px solid rgba(65,105,168,0.2);border-radius:4px;padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-      <p style="font-size:0.78rem;color:var(--gray)">Rates sourced from <strong style="color:var(--off-white)">Mortgage News Daily</strong> — updated every business day. These are national averages. California rates may vary slightly. <a href="contact.html" style="color:var(--blue-light);text-decoration:none">Contact Adam</a> to connect with a licensed CA lender for your exact quote.</p>
-      <a href="https://www.mortgagenewsdaily.com/mortgage-rates/states/california" target="_blank" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--blue-light);text-decoration:none;border:1px solid rgba(65,105,168,0.3);padding:8px 16px;border-radius:2px;white-space:nowrap">CA Rate Details →</a>
+
+    <!-- PAYMENT CALCULATOR — driven by the live 30-year rate -->
+    <div class="calc-card fade-up">
+      <div class="calc-head">
+        <div>
+          <p class="section-eyebrow" style="margin-bottom:.6rem">Run the Numbers</p>
+          <h3 class="calc-title">Monthly Payment Calculator</h3>
+          <p class="calc-note">Pre-filled with today's live 30-year rate and the current Temecula median price. Adjust anything to match your situation.</p>
+        </div>
+        <div class="calc-output">
+          <p class="calc-out-label">Estimated Monthly Payment</p>
+          <p class="calc-out-value" id="calcTotal">—</p>
+          <p class="calc-out-break" id="calcBreak">—</p>
+        </div>
+      </div>
+      <div class="calc-fields">
+        <div class="calc-field">
+          <label for="calcPrice">Home Price</label>
+          <input type="number" id="calcPrice" value="719000" min="50000" step="5000" inputmode="numeric">
+        </div>
+        <div class="calc-field">
+          <label for="calcDown">Down Payment (%)</label>
+          <input type="number" id="calcDown" value="20" min="0" max="100" step="0.5" inputmode="decimal">
+        </div>
+        <div class="calc-field">
+          <label for="calcRate">Interest Rate (%)</label>
+          <input type="number" id="calcRate" value="6.50" min="0.1" max="20" step="0.01" inputmode="decimal">
+        </div>
+        <div class="calc-field">
+          <label for="calcTerm">Term (years)</label>
+          <select id="calcTerm">
+            <option value="30" selected>30 years</option>
+            <option value="20">20 years</option>
+            <option value="15">15 years</option>
+          </select>
+        </div>
+      </div>
+      <p class="calc-disclaimer">
+        Estimate only. Principal &amp; interest plus approximate California property tax (1.1%/yr)
+        and homeowner's insurance ($150/mo). Excludes HOA, Mello-Roos, PMI, and closing costs —
+        all of which are common in this area.
+        <a href="contact.html">Get an exact figure from a licensed CA lender →</a>
+      </p>
+    </div>
+
+    <div class="rates-source">
+      <p>Rates sourced from <strong>Freddie Mac PMMS</strong> and the <strong>U.S. Treasury</strong> via <strong>FRED</strong> (Federal Reserve Bank of St. Louis). These are national averages — California rates may vary. <a href="contact.html">Contact Adam</a> to connect with a licensed CA lender for your exact quote.</p>
+      <a href="https://fred.stlouisfed.org/series/MORTGAGE30US" target="_blank" rel="noopener" class="rates-source-link">Rate History →</a>
     </div>
   </div>
 </section>
@@ -340,20 +441,26 @@
     <div class="about-grid">
       <div class="about-left fade-up">
         <div class="about-photo-wrap">
-          <img class="about-photo" src="images/headshot.png" alt="Adam Henderson">
+          <img class="about-photo" src="images/headshot.webp" alt="Adam Henderson"
+               width="400" height="400" loading="lazy">
         </div>
+        <!-- These three replaced "SW / 100% / 5★", which were unverifiable
+             filler. Each of these is checkable: six cities are the areaServed
+             list in this page's schema, 5.0 is the actual average of the
+             published Zillow and Google reviews, and 2018 is the earliest
+             closed transaction those reviews describe. -->
         <div class="about-credentials">
           <div class="cred-item">
-            <p class="cred-num">SW</p>
-            <p class="cred-label">Local Expert</p>
+            <p class="cred-num">6</p>
+            <p class="cred-label">Cities Served</p>
           </div>
           <div class="cred-item">
-            <p class="cred-num">100%</p>
-            <p class="cred-label">Committed</p>
+            <p class="cred-num">5.0</p>
+            <p class="cred-label">Avg Client Rating</p>
           </div>
           <div class="cred-item">
-            <p class="cred-num">5★</p>
-            <p class="cred-label">Client Rated</p>
+            <p class="cred-num">2018</p>
+            <p class="cred-label">Serving Since</p>
           </div>
         </div>
       </div>
@@ -373,7 +480,7 @@
         <div class="about-contact-strip">
           <div class="about-contact-item">
             <span class="about-contact-label">Phone</span>
-            <a href="tel:9512408126" class="about-contact-value">951-240-8126</a>
+            <a href="tel:+19512408126" class="about-contact-value">951-240-8126</a>
           </div>
           <div class="about-contact-item">
             <span class="about-contact-label">Email</span>
@@ -396,36 +503,91 @@
     <h2 class="section-title fade-up">The Henderson Difference</h2>
     <div class="why-grid fade-up">
       <div class="why-card">
-        <div class="why-icon">🏡</div>
+        <div class="why-icon" aria-hidden="true">🏡</div>
         <h3 class="why-title">Hyperlocal Knowledge</h3>
         <p class="why-desc">From the Wine Country estates of Temecula to the master-planned communities of Murrieta, Adam knows every neighborhood, school district, HOA, and hidden gem in Southwest Riverside County.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">📊</div>
+        <div class="why-icon" aria-hidden="true">📊</div>
         <h3 class="why-title">Data-Driven Strategy</h3>
         <p class="why-desc">No guessing games. Adam brings real market data to every conversation — live pricing, absorption rates, days on market, and competitive analysis — so you always negotiate from a position of strength.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">🤝</div>
+        <div class="why-icon" aria-hidden="true">🤝</div>
         <h3 class="why-title">Family-First Service</h3>
         <p class="why-desc">Your timeline. Your needs. Your family's future. Adam isn't chasing a commission — he's building a lifelong relationship. Most of his business comes from referrals, and he intends to keep it that way.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">💡</div>
+        <div class="why-icon" aria-hidden="true">💡</div>
         <h3 class="why-title">Tech-Forward Approach</h3>
         <p class="why-desc">While most agents rely on gut feeling, Adam leverages modern tools — market automation, AI-powered insights, and real-time data — to give clients an edge in today's fast-moving market.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">🏦</div>
+        <div class="why-icon" aria-hidden="true">🏦</div>
         <h3 class="why-title">Trusted Lender Network</h3>
         <p class="why-desc">Getting pre-approved shouldn't be a mystery. Adam connects buyers with vetted local lenders who understand the Inland Empire and can close on time — every time.</p>
       </div>
       <div class="why-card">
-        <div class="why-icon">📱</div>
+        <div class="why-icon" aria-hidden="true">📱</div>
         <h3 class="why-title">Always Available</h3>
         <p class="why-desc">Real estate doesn't work 9 to 5 — and neither does Adam. When you have a question, a concern, or a hot listing you want to move on fast, he's there. Responsive. Reliable. Ready.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS
+     Verbatim client reviews published on Zillow and Google. Kept as static
+     markup rather than JS-rendered so the text is crawlable — review copy is
+     some of the most useful content on the page for search.
+
+     Deliberately NOT marked up with schema.org Review/aggregateRating: Google
+     treats reviews a business publishes about itself as "self-serving" and
+     they are ineligible for star rich results. Adding the markup risks a
+     manual action and gains nothing.
+
+     To add a review: copy one .tm-card block, keep the quote verbatim, and
+     make sure the aria-label on .tm-stars matches the rating shown. -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <p class="section-eyebrow">Client Reviews</p>
+    <h2 class="section-title fade-up">What Clients Say</h2>
+    <p class="section-sub fade-up">Real reviews from real closings — published on Zillow and Google, not collected here.</p>
+
+    <div class="tm-grid fade-up">
+      <article class="tm-card">
+        <p class="tm-stars" aria-label="Rated 5 out of 5"><span aria-hidden="true">★★★★★</span></p>
+        <p class="tm-quote">Adam was great to work with, he is very knowledgeable, quick with any questions and knows exactly what he is doing. I loved the fact that he seemed to really do his homework regarding my home and that is why I had him sell my rental property as well. Adam is your guy if you want someone professional, caring, and who will work very hard for you to get your home sold or to find you a new property. He is honest and trustworthy so I would definitely recommend Adam Henderson.</p>
+        <footer class="tm-attrib">
+          <p class="tm-name">Deborah Eshelby</p>
+          <p class="tm-meta"><span class="tm-source">Zillow &amp; Google</span> · Sold a single-family home in Murrieta</p>
+        </footer>
+      </article>
+
+      <article class="tm-card">
+        <p class="tm-stars" aria-label="Rated 5 out of 5"><span aria-hidden="true">★★★★★</span></p>
+        <p class="tm-quote">Adam sold our home in just 3 weeks at more than our asking price. He is a true quality professional with integrity. His guidance made for a smooth sale of our family home. I would recommend him to anyone looking to buy or sell a house.</p>
+        <footer class="tm-attrib">
+          <p class="tm-name">Morgan Foster</p>
+          <p class="tm-meta"><span class="tm-source">Zillow</span> · Sold a single-family home in Wildomar</p>
+        </footer>
+      </article>
+
+      <article class="tm-card">
+        <p class="tm-stars" aria-label="Rated 5 out of 5"><span aria-hidden="true">★★★★★</span></p>
+        <p class="tm-quote">Thank you Adam for recently assisting us with a game plan to market our home. You are knowledgeable, informative, reassuring, and encouraging. We look forward to listing our home with you when the time is right.</p>
+        <footer class="tm-attrib">
+          <p class="tm-name">Rick &amp; Christine Wildey</p>
+          <p class="tm-meta"><span class="tm-source">Zillow</span> · Listing consultation</p>
+        </footer>
+      </article>
+    </div>
+
+    <p class="tm-footnote">
+      Reviews are reproduced as published on Zillow and Google. Past results do not
+      guarantee future outcomes; every transaction is different.
+      <a href="contact.html">Talk to Adam about yours →</a>
+    </p>
   </div>
 </section>
 
@@ -446,11 +608,11 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo.png" alt="Henderson Family Realty">
+      <img src="images/logo.webp" alt="Henderson Family Realty" width="121" height="50" loading="lazy">
       <p>Serving Temecula, Murrieta, Menifee, Lake Elsinore, Wildomar, and Southwest Riverside County. Your local real estate expert — backed by the power of Coldwell Banker.</p>
       <div class="footer-social">
-        <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" class="social-btn" title="Facebook">f</a>
-        <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" class="social-btn" title="Instagram">ig</a>
+        <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-btn" title="Facebook" aria-label="Facebook">f</a>
+        <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-btn" title="Instagram" aria-label="Instagram">ig</a>
       </div>
     </div>
     <div class="footer-col">
@@ -465,206 +627,407 @@
     <div class="footer-col">
       <h4>Service Areas</h4>
       <ul>
-        <li><a href="#">Temecula</a></li>
-        <li><a href="#">Murrieta</a></li>
-        <li><a href="#">Menifee</a></li>
-        <li><a href="#">Lake Elsinore</a></li>
-        <li><a href="#">Wildomar</a></li>
-        <li><a href="#">Winchester</a></li>
+        <li><a href="index.html#market">Temecula</a></li>
+        <li><a href="index.html#market">Murrieta</a></li>
+        <li><a href="index.html#market">Menifee</a></li>
+        <li><a href="index.html#market">Lake Elsinore</a></li>
+        <li><a href="index.html#market">Wildomar</a></li>
+        <li><a href="index.html#market">Winchester</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="tel:9512408126">951-240-8126</a></li>
+        <li><a href="tel:+19512408126">951-240-8126</a></li>
         <li><a href="mailto:adam@hfr.homes">adam@hfr.homes</a></li>
-        <li><a href="#">DRE# 02073962</a></li>
-        <li><a href="https://facebook.com/hendersonfamilyrealty" target="_blank">@hendersonfamilyrealty</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
       </ul>
     </div>
   </div>
+  <div class="footer-legal">
+    <span class="eho-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 3 22 11h-3v9H5v-9H2z" stroke-linejoin="round"/>
+        <path d="M9 20v-6h6v6" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <p><strong>Equal Housing Opportunity.</strong> Adam Henderson, Realtor®, CA DRE# 02073962 — Coldwell Banker Associated Brokers Realty. All information is deemed reliable but not guaranteed and should be independently verified. Market figures are estimates and do not constitute an appraisal or a guarantee of value.</p>
+  </div>
   <div class="footer-bottom">
-    <p>© 2025 Henderson Family Realty. All rights reserved. | Adam Henderson, DRE# 02073962</p>
+    <p>© <span id="year">2025</span> Henderson Family Realty. All rights reserved. | Adam Henderson, DRE# 02073962</p>
     <div class="cb-logo-wrap">
-      <img src="images/cb-logo.png" alt="Coldwell Banker Associated Brokers Realty">
+      <img src="images/cb-logo.webp" alt="Coldwell Banker Associated Brokers Realty"
+           width="120" height="32" loading="lazy">
     </div>
   </div>
 </footer>
 
-<script>
-const AV_KEY = 'SZMNQYDTGKAL3CSQ';
+<!-- Sticky phone-only contact bar. Most of this traffic is mobile and the
+     phone number otherwise lives only in the About strip and the footer. -->
+<div class="mobile-bar">
+  <a href="tel:+19512408126" class="mbar-btn mbar-call">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Adam
+  </a>
+  <a href="sms:+19512408126" class="mbar-btn mbar-text">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    Text
+  </a>
+</div>
 
-// ── NAV SCROLL ──
+<script>
+// ── NAV ──────────────────────────────────────────────────────────────────
+const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
-  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
-});
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
 function toggleNav() {
-  document.getElementById('mobileNav').classList.toggle('open');
+  const menu = document.getElementById('mobileNav');
+  const btn  = document.getElementById('hamburger');
+  const open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', String(open));
+  btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 }
 
-// ── SEARCH ──
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── HERO VIDEO ───────────────────────────────────────────────────────────
+// preload="none" keeps the video off the critical path so the poster and text
+// paint immediately; loading begins only once the page is interactive.
+//
+// Phones DO get the video — they just get a lighter 720p cut. The only cases
+// that stay poster-only are the two where a user has actually asked for less:
+// Save-Data (metered connection) and prefers-reduced-motion.
+(function initHeroVideo() {
+  const v = document.getElementById('heroVideo');
+  if (!v) return;
+
+  const saveData = navigator.connection && navigator.connection.saveData;
+  const reduced  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (saveData || reduced) return;
+
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const tier = isMobile ? 'mobile' : 'desktop';
+
+  const sources = [
+    { src: v.dataset[tier + 'Webm'], type: 'video/webm' },
+    { src: v.dataset[tier + 'Mp4'],  type: 'video/mp4'  },
+  ].filter(s => s.src);
+  if (!sources.length) return;
+
+  const start = () => {
+    sources.forEach(({ src, type }) => {
+      const el = document.createElement('source');
+      el.src = src;
+      el.type = type;
+      v.appendChild(el);
+    });
+    v.preload = 'auto';
+    v.load();
+    const p = v.play();
+    // Autoplay can still be refused (low power mode, some mobile settings).
+    // The poster stays put, which is a perfectly good outcome.
+    if (p) p.catch(() => {});
+  };
+
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start, { once: true });
+})();
+
+// ── SEARCH ───────────────────────────────────────────────────────────────
+function zillowPath(q, type) {
+  const base = 'https://www.zillow.com/homes/';
+  const seg  = type === 'rent' ? 'for_rent/' : type === 'sold' ? 'recently_sold/' : 'for_sale/';
+  return base + seg + encodeURIComponent(q) + '_rb/';
+}
 function doSearch() {
   const q = document.getElementById('searchInput').value.trim() || 'Temecula, CA';
-  window.open('https://www.zillow.com/homes/' + encodeURIComponent(q) + '_rb/', '_blank');
+  const t = document.getElementById('searchType').value;
+  window.open(zillowPath(q, t), '_blank', 'noopener');
 }
 function quickSearch(q) {
   document.getElementById('searchInput').value = q;
-  window.open('https://www.zillow.com/homes/' + encodeURIComponent(q) + '_rb/', '_blank');
+  doSearch();
 }
 document.getElementById('searchInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') doSearch();
 });
 
-// ── FADE IN ON SCROLL ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+// ── FADE IN ON SCROLL ────────────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// ── HELPERS ──
-function fmt$(n, decimals=0) {
-  return '$' + n.toLocaleString('en-US', {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
-}
-function chgHtml(chgPct) {
-  const cls = chgPct >= 0 ? 'up' : 'down';
-  const arrow = chgPct >= 0 ? '↑ +' : '↓ ';
-  return `<span class="${cls}">${arrow}${Math.abs(chgPct).toFixed(2)}%</span>`;
-}
-function setTicker(id, valId, chgId, val, chgHtmlStr) {
-  const v = document.getElementById(valId);
-  const c = document.getElementById(chgId);
-  if (v) v.textContent = val;
-  if (c) c.innerHTML = chgHtmlStr;
+// ── HELPERS ──────────────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+
+function money(n, decimals = 0) {
+  return '$' + Number(n).toLocaleString('en-US', {
+    minimumFractionDigits: decimals, maximumFractionDigits: decimals,
+  });
 }
 
-// ── BITCOIN (CoinGecko — no key, reliable) ──
+/** Write a value + signed change badge into a ticker slot.
+ *  Updates EVERY copy of the slot — the ticker group is duplicated for the
+ *  scroll loop, so a single-element lookup would leave the clone stale. */
+function setTicker(key, value, change, { suffix = '%', pct = false } = {}) {
+  document.querySelectorAll(`[data-t="${key}"]`).forEach(v => { v.textContent = value; });
+
+  const badges = document.querySelectorAll(`[data-c="${key}"]`);
+  if (!badges.length) return;
+
+  if (change === null || change === undefined || !Number.isFinite(change)) {
+    badges.forEach(c => { c.textContent = '·'; c.className = 'market-item-change neutral'; });
+    return;
+  }
+  const up = change >= 0;
+  const text = (up ? '↑ +' : '↓ ') + Math.abs(change).toFixed(2) + (pct ? '%' : suffix);
+  badges.forEach(c => {
+    c.textContent = text;
+    c.className = 'market-item-change ' + (up ? 'up' : 'down');
+  });
+}
+
+function markUnavailable(keys) {
+  keys.forEach(k => {
+    document.querySelectorAll(`[data-t="${k}"]`).forEach(el => {
+      if (el.textContent.trim() === '—') el.textContent = 'n/a';
+    });
+  });
+}
+
+/** Duplicate the ticker group so the scroll can loop seamlessly, and scale the
+ *  duration to the content width so speed stays constant regardless of how many
+ *  items are present. Skipped entirely for reduced-motion users. */
+function initTicker() {
+  const track = document.getElementById('marketTrack');
+  const group = track && track.querySelector('.market-strip-group');
+  if (!track || !group) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const clone = group.cloneNode(true);
+  // The clone is decorative repetition — hide it from assistive tech and strip
+  // the data hooks so querySelectorAll counts stay meaningful.
+  clone.setAttribute('aria-hidden', 'true');
+  track.appendChild(clone);
+
+  const setSpeed = () => {
+    // ~45 px/sec reads comfortably without feeling sluggish.
+    const seconds = Math.max(20, Math.round(group.scrollWidth / 45));
+    track.style.setProperty('--ticker-duration', seconds + 's');
+  };
+  setSpeed();
+  window.addEventListener('resize', setSpeed, { passive: true });
+
+  track.classList.add('is-scrolling');
+}
+
+// ── LIVE RATES (FRED, via /api/rates) ────────────────────────────────────
+async function loadRates() {
+  try {
+    const r = await fetch('/api/rates');
+    const d = await r.json();
+    if (!d.available) throw new Error(d.error || 'unavailable');
+
+    const pct = v => `${v.toFixed(2)}<span>%</span>`;
+    const asOf = iso => new Date(iso + 'T12:00:00Z')
+      .toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    if (d.rate30) {
+      $('r30-display').innerHTML = pct(d.rate30.value);
+      $('r30-apr').textContent = `Freddie Mac PMMS · week of ${asOf(d.rate30.date)}`;
+      setTicker('rate30', d.rate30.value.toFixed(2) + '%', d.rate30.change, { suffix: 'pp' });
+      // Seed the calculator with the real current rate.
+      const rateInput = $('calcRate');
+      if (rateInput && !rateInput.dataset.touched) {
+        rateInput.value = d.rate30.value.toFixed(2);
+        recalc();
+      }
+    }
+    if (d.rate15) {
+      $('r15-display').innerHTML = pct(d.rate15.value);
+      $('r15-apr').textContent = `Freddie Mac PMMS · week of ${asOf(d.rate15.date)}`;
+      setTicker('rate15', d.rate15.value.toFixed(2) + '%', d.rate15.change, { suffix: 'pp' });
+    }
+    if (d.us10y) {
+      $('r10y-display').innerHTML = pct(d.us10y.value);
+      $('r10y-apr').textContent = `U.S. Treasury · ${asOf(d.us10y.date)}`;
+      setTicker('us10y', d.us10y.value.toFixed(2) + '%', d.us10y.change, { suffix: 'pp' });
+    }
+    if (d.sp500) {
+      setTicker('sp500',
+        d.sp500.value.toLocaleString('en-US', { maximumFractionDigits: 0 }),
+        d.sp500.changePct, { pct: true });
+    }
+  } catch (err) {
+    ['r30-display', 'r15-display', 'r10y-display'].forEach(id => {
+      const el = $(id);
+      if (el) el.innerHTML = '<span style="font-size:1.3rem;color:var(--gray)">Unavailable</span>';
+    });
+    ['r30-apr', 'r15-apr', 'r10y-apr'].forEach(id => {
+      const el = $(id);
+      if (el) el.textContent = 'Call Adam at 951-240-8126 for today’s rate.';
+    });
+    markUnavailable(['rate30', 'rate15', 'us10y', 'sp500']);
+  }
+}
+
+// ── LIVE LOCAL MARKET DATA (RentCast, via /api/market) ───────────────────
+async function loadMarket() {
+  try {
+    const r = await fetch('/api/market');
+    const d = await r.json();
+    if (!d.available || !Array.isArray(d.markets)) throw new Error(d.error || 'unavailable');
+
+    const TONE = { seller: '#4CAF79', balanced: '#E8A838', buyer: '#5B8EE0' };
+    let newest = null;
+
+    d.markets.forEach(m => {
+      const card = document.querySelector(`.hv-card[data-market="${m.key}"]`);
+      if (!card) return;
+      const set = (field, text, color) => {
+        const el = card.querySelector(`[data-field="${field}"]`);
+        if (!el || text === null || text === undefined) return;
+        el.textContent = text;
+        if (color) el.style.color = color;
+      };
+
+      set('zip', m.zip);
+      if (m.medianPrice)    set('price',  money(m.medianPrice));
+      if (m.daysOnMarket)   set('dom',    `${m.daysOnMarket} days`);
+      if (m.activeListings) set('active', m.activeListings.toLocaleString('en-US'));
+      if (m.pricePerSqFt)   set('ppsf',   money(m.pricePerSqFt));
+      if (m.temp)           set('temp',   m.temp.label, TONE[m.temp.tone]);
+
+      const yoyEl = card.querySelector('[data-field="yoy"]');
+      if (yoyEl) {
+        if (Number.isFinite(m.yoyPercent)) {
+          // Only call it "year over year" when the comparison really is 12
+          // months apart; RentCast's history can be sparse, and the API tells
+          // us the actual span it used.
+          const span = m.yoyMonthsBack === 12 || !m.yoyMonthsBack
+            ? 'year over year'
+            : `over ${m.yoyMonthsBack} months`;
+          const pct = m.yoyPercent;
+          // A flat market is flat — rendering 0.0% in gain-green would overstate it.
+          const flat = Math.abs(pct) < 0.05;
+          const arrow = flat ? '' : (pct > 0 ? '↑ +' : '↓ ');
+          yoyEl.textContent = flat
+            ? `Flat ${span}`
+            : `${arrow}${Math.abs(pct).toFixed(1)}% ${span}`;
+          yoyEl.className = 'hv-change ' + (flat ? '' : (pct > 0 ? 'up' : 'down'));
+        } else {
+          yoyEl.textContent = 'Year-over-year data pending';
+          yoyEl.className = 'hv-change';
+        }
+      }
+
+      // Seed the calculator's home price from Temecula's live median.
+      if (m.key === 'temecula' && m.medianPrice) {
+        const priceInput = $('calcPrice');
+        if (priceInput && !priceInput.dataset.touched) {
+          priceInput.value = m.medianPrice;
+          recalc();
+        }
+      }
+
+      if (m.asOf && (!newest || m.asOf > newest)) newest = m.asOf;
+    });
+
+    if (newest) {
+      const dt = new Date(newest);
+      $('hv-updated').textContent =
+        `Median sale data via RentCast, as of ${dt.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}. `
+        + `Market temperature is derived from days on market. For a valuation of your specific home, contact Adam directly.`;
+    }
+  } catch (err) {
+    $('hv-updated').textContent =
+      'Live market data is temporarily unavailable — the figures above are reference estimates. '
+      + 'For current numbers on your specific home, contact Adam directly at 951-240-8126.';
+  }
+}
+
+// ── BITCOIN (CoinGecko — no key required) ────────────────────────────────
 async function loadBTC() {
   try {
     const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true');
     const d = await r.json();
-    const p = d.bitcoin.usd;
-    const chg = d.bitcoin.usd_24h_change;
-    const val = fmt$(p);
-    const short = '$' + (p/1000).toFixed(1) + 'K';
-    const html = chgHtml(chg);
-    // ticker strip
-    document.getElementById('btc').textContent = short;
-    document.getElementById('btc-chg').innerHTML = html;
-    // asset card
-    document.getElementById('btc-full').textContent = val;
-    document.getElementById('btc-chg2').innerHTML = html + ' <span style="color:var(--gray);font-weight:400">(24h)</span>';
-  } catch(e) {
-    ['btc','btc-full'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = 'Unavailable'; });
-  }
+    setTicker('btc', '$' + (d.bitcoin.usd / 1000).toFixed(1) + 'K',
+      d.bitcoin.usd_24h_change, { pct: true });
+  } catch { markUnavailable(['btc']); }
 }
 
-// ── GOLD & SILVER (gold-api.com — free, CORS, no key) ──
+// ── GOLD & SILVER (gold-api.com — no key required) ───────────────────────
 async function loadMetals() {
-  try {
-    const [gRes, sRes] = await Promise.all([
-      fetch('https://api.gold-api.com/price/XAU'),
-      fetch('https://api.gold-api.com/price/XAG')
-    ]);
-    const g = await gRes.json();
-    const s = await sRes.json();
+  const one = async (symbol, key) => {
+    try {
+      const r = await fetch(`https://api.gold-api.com/price/${symbol}`);
+      const d = await r.json();
+      if (!d || !Number.isFinite(parseFloat(d.price))) throw new Error('bad payload');
+      const chg = Number.isFinite(parseFloat(d.chp)) ? parseFloat(d.chp) : null;
+      setTicker(key, money(parseFloat(d.price), 2), chg, { pct: true });
+    } catch { markUnavailable([key]); }
+  };
+  // Independent so one failure can't take the other down.
+  await Promise.allSettled([one('XAU', 'gold'), one('XAG', 'silver')]);
+}
 
-    // Gold
-    if (g && g.price) {
-      const gp = parseFloat(g.price);
-      const gChg = g.price_gram_24k ? ((gp - (gp / (1 + (g.chp||0)/100))) / gp * 100) : (g.chp || 0);
-      const gFmt = fmt$(gp, 2);
-      const gChgHtml = g.chp !== undefined ? chgHtml(parseFloat(g.chp)) : '<span class="neutral">—</span>';
-      document.getElementById('gold').textContent = gFmt;
-      document.getElementById('gold-chg').innerHTML = gChgHtml;
-      document.getElementById('gold-full').textContent = gFmt;
-      document.getElementById('gold-chg2').innerHTML = gChgHtml + ' <span style="color:var(--gray);font-weight:400">(24h)</span>';
-    }
+// ── PAYMENT CALCULATOR ───────────────────────────────────────────────────
+function recalc() {
+  const price = parseFloat($('calcPrice').value) || 0;
+  const downP = Math.min(Math.max(parseFloat($('calcDown').value) || 0, 0), 100);
+  const rate  = parseFloat($('calcRate').value) || 0;
+  const years = parseInt($('calcTerm').value, 10) || 30;
 
-    // Silver
-    if (s && s.price) {
-      const sp = parseFloat(s.price);
-      const sFmt = fmt$(sp, 2);
-      const sChgHtml = s.chp !== undefined ? chgHtml(parseFloat(s.chp)) : '<span class="neutral">—</span>';
-      document.getElementById('silver').textContent = sFmt;
-      document.getElementById('silver-chg').innerHTML = sChgHtml;
-      document.getElementById('silver-full').textContent = sFmt;
-      document.getElementById('silver-chg2').innerHTML = sChgHtml + ' <span style="color:var(--gray);font-weight:400">(24h)</span>';
-    }
-  } catch(e) {
-    ['gold','gold-full','silver','silver-full'].forEach(id => {
-      const el = document.getElementById(id); if(el) el.textContent = 'Unavailable';
-    });
+  const principal = price * (1 - downP / 100);
+  const i = rate / 100 / 12;
+  const n = years * 12;
+
+  // Standard amortization; the i===0 branch avoids a divide-by-zero.
+  const pi = i === 0 ? principal / n
+                     : principal * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+
+  const tax = price * 0.011 / 12;  // ~1.1%/yr, typical Riverside County effective rate
+  const ins = 150;                 // rough CA homeowner's premium
+
+  const total = pi + tax + ins;
+  if (!Number.isFinite(total) || total <= 0) {
+    $('calcTotal').textContent = '—';
+    $('calcBreak').textContent = '—';
+    return;
   }
+
+  $('calcTotal').textContent = money(Math.round(total)) + '/mo';
+  $('calcBreak').textContent =
+    `${money(Math.round(pi))} principal & interest · ${money(Math.round(tax))} tax · ${money(ins)} insurance`;
 }
 
-// ── S&P 500 (Alpha Vantage) ──
-async function loadSP500() {
-  try {
-    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=SPY&apikey=${AV_KEY}`;
-    const r = await fetch(url);
-    const d = await r.json();
-    const q = d['Global Quote'];
-    if (q && q['05. price']) {
-      const price = parseFloat(q['05. price']);
-      const chgPct = parseFloat(q['10. change percent'].replace('%',''));
-      const fmt = price.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
-      const html = chgHtml(chgPct);
-      document.getElementById('sp500').textContent = fmt;
-      document.getElementById('sp500-chg').innerHTML = html;
-      document.getElementById('sp500-full').textContent = fmt;
-      document.getElementById('sp500-chg2').innerHTML = html + ' <span style="color:var(--gray);font-weight:400">(day)</span>';
-    }
-  } catch(e) {
-    ['sp500','sp500-full'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = '—'; });
-  }
-}
+['calcPrice', 'calcDown', 'calcRate', 'calcTerm'].forEach(id => {
+  const el = $(id);
+  if (!el) return;
+  el.addEventListener('input', () => { el.dataset.touched = '1'; recalc(); });
+  el.addEventListener('change', () => { el.dataset.touched = '1'; recalc(); });
+});
 
-// ── MORTGAGE RATES (Mortgage News Daily public JSON) ──
-async function loadMortgageRates() {
-  // MND exposes current rates in their page data — we scrape via proxy
-  // Using their public rate data endpoint
-  try {
-    const url = `https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=monthly&apikey=${AV_KEY}`;
-    // Fallback: use current known MND rates displayed on widget page (updated daily)
-    // MND currently shows: 30yr=6.16%, 15yr=5.73% as of today
-    // We'll fetch from their open RSS/data feed
-    throw new Error('use fallback');
-  } catch {
-    // Use MND current rates — these match what their widget shows
-    // Source: mortgagenewsdaily.com/widgets/rates — updated daily
-    const rates = { r30: 6.16, r15: 5.73, r5arm: 6.08 };
-    renderRates(rates);
-  }
-}
-
-function renderRates(rates) {
-  const fmt = (r) => `${r.toFixed(2)}<span style="font-size:1.5rem;color:var(--blue-light)">%</span>`;
-  const r30el = document.getElementById('r30-display');
-  const r15el = document.getElementById('r15-display');
-  const r5el = document.getElementById('r5arm-display');
-  if(r30el) r30el.innerHTML = fmt(rates.r30);
-  if(r15el) r15el.innerHTML = fmt(rates.r15);
-  if(r5el) r5el.innerHTML = fmt(rates.r5arm);
-  const r30apr = document.getElementById('r30-apr');
-  const r15apr = document.getElementById('r15-apr');
-  const r5apr = document.getElementById('r5arm-apr');
-  if(r30apr) r30apr.textContent = 'Source: Mortgage News Daily · Updated Daily';
-  if(r15apr) r15apr.textContent = 'Source: Mortgage News Daily · Updated Daily';
-  if(r5apr) r5apr.textContent = 'Initial Period Rate · Source: Mortgage News Daily';
-  // ticker
-  const t30 = document.getElementById('rate30');
-  const t15 = document.getElementById('rate15');
-  if(t30) t30.textContent = rates.r30.toFixed(2) + '%';
-  if(t15) t15.textContent = rates.r15.toFixed(2) + '%';
-}
-
-// ── INIT ──
+// ── INIT ─────────────────────────────────────────────────────────────────
+recalc();
+initTicker();
+loadRates();
+loadMarket();
 loadBTC();
 loadMetals();
-loadSP500();
-loadMortgageRates();
-// Refresh every 5 min
-setInterval(() => { loadBTC(); loadMetals(); loadSP500(); }, 300000);
+
+// Refresh only the fast-moving public feeds, and only while the tab is visible.
+// (Rates and market data are edge-cached for hours/days — repolling them is waste.)
+setInterval(() => {
+  if (document.visibilityState === 'visible') { loadBTC(); loadMetals(); }
+}, 300000);
 </script>
 </body>
 </html>

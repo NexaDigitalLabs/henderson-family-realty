@@ -1,0 +1,62 @@
+/* ── STICKY MOBILE CONTACT BAR ────────────────────────────────────────────
+   Phone-only call/text bar pinned to the bottom of the viewport.
+
+   Lives in its own file rather than in styles.css because buy/sell/contact
+   still carry their own inline stylesheets; a separate file lets all four
+   pages share one copy instead of duplicating the rules four times. Every
+   selector is namespaced .mbar-* so it cannot collide with those inline
+   sheets. Once the inline CSS is consolidated this can fold into styles.css.
+*/
+.mobile-bar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1200;
+  background: rgba(8, 10, 15, 0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(65, 105, 168, 0.28);
+  /* Clears the iOS home-indicator strip so the buttons stay tappable. */
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  gap: 10px;
+}
+.mbar-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  /* 46px keeps the target above the 44px minimum for touch. */
+  min-height: 46px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mbar-btn svg { flex-shrink: 0; }
+.mbar-call {
+  background: #4169A8;
+  color: #FFFFFF;
+  border: 1px solid #4169A8;
+}
+.mbar-text {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(65, 105, 168, 0.5);
+}
+
+@media (max-width: 768px) {
+  .mobile-bar { display: flex; }
+  /* Keep the bar from covering the last of the footer text. */
+  body { padding-bottom: 72px; }
+}
+
+/* Hidden when printing — a fixed bar would otherwise stamp itself onto
+   every printed page. */
+@media print {
+  .mobile-bar { display: none !important; }
+  body { padding-bottom: 0 !important; }
+}

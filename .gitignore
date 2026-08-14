@@ -1,0 +1,38 @@
+# Secrets — never commit these. API keys belong in Vercel env vars.
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Dependencies
+node_modules/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Original source images, superseded by the WebP versions.
+# Safe to delete once the live site is verified.
+# images/*.png
+
+.vercel
+
+# Real env files stay out; the example is documentation and must ship.
+# The negation has to come after the wildcard or it is overridden.
+.env*
+!.env.example
+
+# Local deploy bookkeeping — rewritten every deploy, pure churn in history.
+.lastdeploy
+
+# Raw source footage — huge, never commit
+_source/
+*.mov
+*.MOV
+*.mkv
+*.avi

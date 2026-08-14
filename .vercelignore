@@ -1,0 +1,31 @@
+# Raw source footage lives in _source/ and must NEVER be deployed.
+# Only the encoded output in video/ ships (a few MB, not gigabytes).
+_source/
+
+# Common camera/editor formats, in case a source lands outside _source/ by mistake.
+*.MOV
+*.mov
+*.avi
+*.mkv
+*.mts
+*.MTS
+*.m2ts
+*.prproj
+*.aep
+
+# Originals superseded by the WebP versions in images/.
+# Listed individually on purpose — a blanket images/*.png would also drop the
+# home-screen icons below, which ARE served and must ship.
+images/logo.png
+images/headshot.png
+images/cb-logo.png
+
+# Master artwork the icons are generated from; not referenced by any page.
+images/app-icon.png
+
+# Local authoring scripts — they run on your machine, they are not site content.
+tools/
+
+node_modules
+.env
+.env.*

@@ -3,9 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buy a Home | Henderson Family Realty</title>
+<title>Buy a Home in Temecula &amp; Murrieta | Henderson Family Realty</title>
+<meta name="description" content="A step-by-step guide to buying a home in Temecula, Murrieta and Southwest Riverside County — down payments, closing costs, timelines and pre-approval. Guidance from Adam Henderson, Realtor® DRE# 02073962.">
+<link rel="canonical" href="https://www.hendersonfamilyrealty.com/buy">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080A0F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Henderson Family Realty">
+<meta property="og:url" content="https://www.hendersonfamilyrealty.com/buy">
+<meta property="og:title" content="Buy a Home in Temecula &amp; Murrieta | Henderson Family Realty">
+<meta property="og:description" content="From your first conversation to closing day, Adam guides you through every step of the home buying process.">
+<meta property="og:image" content="https://www.hendersonfamilyrealty.com/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Home-screen icon. iOS needs a square PNG (it will not take the WebP
+     and applies its own rounded mask); Android reads the manifest. -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- FAQPage schema mirrors the on-page Buyer FAQ verbatim, which is what makes
+     it eligible for Google's rich results. Keep the two in sync when editing. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://www.hendersonfamilyrealty.com/buy",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do I need to put down to buy a home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Down payment requirements vary by loan type. Conventional loans can go as low as 3% for first-time buyers, FHA loans require 3.5%, VA loans (for veterans) require 0% down, and USDA loans for eligible rural areas can also be 0% down. Most buyers in the Temecula/Murrieta area put down 5–20%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to buy a home in California?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From the time your offer is accepted to close of escrow typically takes 21–45 days. The full process — finding a home, getting under contract, and closing — usually takes 2–4 months depending on your timeline and how competitive the market is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a buyer pay the real estate agent's commission?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of August 2024, commission structures changed in California. The buyer and buyer's agent now enter into a written buyer representation agreement outlining compensation terms. In many cases, the seller still offers compensation to the buyer's agent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are closing costs and how much should I expect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Closing costs typically run 2–3% of the purchase price on top of your down payment. They include lender fees, title insurance, escrow fees, property taxes, and homeowner's insurance prepayment. On a $650,000 home, you might see $13,000–$20,000 in closing costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is now a good time to buy in Temecula or Murrieta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best time to buy is when you're financially ready and find a home that fits your family's needs. Southwest Riverside County continues to see steady appreciation. Adam gives you real data to make an informed decision, not a sales pitch."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile-bar.css">
+<!-- Vercel Web Analytics — same-origin, cookieless. Requires Analytics to be
+     enabled on the project in the Vercel dashboard. -->
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
   :root {
     --black: #080A0F; --navy: #1C2B4A; --blue: #4169A8; --blue-light: #5B84C4;
@@ -229,12 +301,18 @@
     .steps-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
   }
+
+.footer-legal{max-width:1280px;margin:0 auto;display:flex;align-items:flex-start;gap:1rem;padding:1.75rem 0;border-top:1px solid rgba(255,255,255,0.05);}
+.eho-mark{color:var(--gray);flex-shrink:0;margin-top:2px;}
+.footer-legal p{font-size:0.68rem;color:var(--gray);line-height:1.75;}
+.footer-legal strong{color:var(--off-white);}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo"><img src="images/logo.png" alt="Henderson Family Realty"></div>
+  <div class="nav-logo"><img src="images/logo.webp" alt="Henderson Family Realty" width="126" height="52" fetchpriority="high"></div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="buy.html" style="color:var(--blue-light)">Buy</a></li>
@@ -361,7 +439,7 @@
         <div class="sidebar-divider"></div>
         <div class="contact-item">
           <p class="contact-label">Call or Text</p>
-          <a href="tel:9512408126" class="contact-value">951-240-8126</a>
+          <a href="tel:+19512408126" class="contact-value">951-240-8126</a>
         </div>
         <div class="contact-item">
           <p class="contact-label">Email</p>
@@ -408,14 +486,14 @@
           </div>
           <div>
             <p style="font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);margin-bottom:3px;">Website</p>
-            <a href="https://rwmloans.com/mortgage-by-kim/" target="_blank" style="font-size:0.88rem;font-weight:600;color:var(--blue-light);text-decoration:none;">rwmloans.com/mortgage-by-kim</a>
+            <a href="https://rwmloans.com/mortgage-by-kim/" target="_blank" rel="noopener" style="font-size:0.88rem;font-weight:600;color:var(--blue-light);text-decoration:none;">rwmloans.com/mortgage-by-kim</a>
           </div>
         </div>
       </div>
       <div class="lender-contact">
-        <a href="https://apply.rwmloans.com/borrower/signup/kim.england@rwmloans.com" target="_blank" class="btn btn-primary">Apply Now</a>
-        <a href="https://rwmloans.com/mortgage-by-kim/" target="_blank" class="btn btn-outline">Learn More</a>
-        <a href="tel:9512408126" class="btn btn-outline" style="margin-top:0.5rem;font-size:0.65rem;">Or Call Adam · 951-240-8126</a>
+        <a href="https://apply.rwmloans.com/borrower/signup/kim.england@rwmloans.com" target="_blank" rel="noopener" class="btn btn-primary">Apply Now</a>
+        <a href="https://rwmloans.com/mortgage-by-kim/" target="_blank" rel="noopener" class="btn btn-outline">Learn More</a>
+        <a href="tel:+19512408126" class="btn btn-outline" style="margin-top:0.5rem;font-size:0.65rem;">Or Call Adam · 951-240-8126</a>
       </div>
     </div>
   </div>
@@ -466,11 +544,11 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo.png" alt="Henderson Family Realty">
+      <img src="images/logo.webp" alt="Henderson Family Realty" width="121" height="50" loading="lazy">
       <p>Serving Temecula, Murrieta, Menifee, Lake Elsinore, Wildomar, and Southwest Riverside County.</p>
       <div class="footer-social">
-        <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" class="social-btn">f</a>
-        <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" class="social-btn">ig</a>
+        <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-btn">ig</a>
       </div>
     </div>
     <div class="footer-col"><h4>Navigate</h4><ul>
@@ -478,21 +556,43 @@
       <li><a href="sell.html">Sell</a></li><li><a href="contact.html">Contact</a></li>
     </ul></div>
     <div class="footer-col"><h4>Service Areas</h4><ul>
-      <li><a href="#">Temecula</a></li><li><a href="#">Murrieta</a></li>
-      <li><a href="#">Menifee</a></li><li><a href="#">Lake Elsinore</a></li>
-      <li><a href="#">Wildomar</a></li><li><a href="#">Winchester</a></li>
+      <li><a href="index.html#market">Temecula</a></li><li><a href="index.html#market">Murrieta</a></li>
+      <li><a href="index.html#market">Menifee</a></li><li><a href="index.html#market">Lake Elsinore</a></li>
+      <li><a href="index.html#market">Wildomar</a></li><li><a href="index.html#market">Winchester</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><ul>
-      <li><a href="tel:9512408126">951-240-8126</a></li>
+      <li><a href="tel:+19512408126">951-240-8126</a></li>
       <li><a href="mailto:adam@hfr.homes">adam@hfr.homes</a></li>
-      <li><a href="#">DRE# 02073962</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
     </ul></div>
   </div>
+  <div class="footer-legal">
+    <span class="eho-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 3 22 11h-3v9H5v-9H2z" stroke-linejoin="round"/>
+        <path d="M9 20v-6h6v6" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <p><strong>Equal Housing Opportunity.</strong> Adam Henderson, Realtor&reg;, CA DRE# 02073962 &mdash; Coldwell Banker Associated Brokers Realty. All information is deemed reliable but not guaranteed and should be independently verified.</p>
+  </div>
   <div class="footer-bottom">
-    <p>© 2025 Henderson Family Realty. All rights reserved. | Adam Henderson, DRE# 02073962</p>
-    <div class="cb-logo-wrap"><img src="images/cb-logo.png" alt="Coldwell Banker Associated Brokers Realty"></div>
+    <p>© <span id="year">2025</span> Henderson Family Realty. All rights reserved. | Adam Henderson, DRE# 02073962</p>
+    <div class="cb-logo-wrap"><img src="images/cb-logo.webp" alt="Coldwell Banker Associated Brokers Realty" width="120" height="32" loading="lazy"></div>
   </div>
 </footer>
+<!-- Sticky phone-only contact bar. Shared styles in mobile-bar.css. -->
+<div class="mobile-bar">
+  <a href="tel:+19512408126" class="mbar-btn mbar-call">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Adam
+  </a>
+  <a href="sms:+19512408126" class="mbar-btn mbar-text">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    Text
+  </a>
+</div>
+
 
 <script>
 function toggleFaq(el) {
@@ -500,5 +600,6 @@ function toggleFaq(el) {
   el.nextElementSibling.classList.toggle('open');
 }
 </script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

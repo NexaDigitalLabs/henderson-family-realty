@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Contact | Henderson Family Realty</title>
+<title>Contact Adam Henderson | Temecula &amp; Murrieta Realtor</title>
+<meta name="description" content="Talk to Adam Henderson, Realtor® (DRE# 02073962), about buying or selling in Temecula, Murrieta, Menifee, Lake Elsinore, Wildomar or Winchester. Call 951-240-8126 or send a message.">
+<link rel="canonical" href="https://www.hendersonfamilyrealty.com/contact">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080A0F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Henderson Family Realty">
+<meta property="og:url" content="https://www.hendersonfamilyrealty.com/contact">
+<meta property="og:title" content="Contact Adam Henderson | Temecula &amp; Murrieta Realtor">
+<meta property="og:description" content="No pressure, no scripts. Just an honest conversation about your real estate goals with a local expert.">
+<meta property="og:image" content="https://www.hendersonfamilyrealty.com/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Home-screen icon. iOS needs a square PNG (it will not take the WebP
+     and applies its own rounded mask); Android reads the manifest. -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://www.hendersonfamilyrealty.com/contact",
+  "name": "Contact Henderson Family Realty",
+  "mainEntity": {
+    "@type": "RealEstateAgent",
+    "name": "Henderson Family Realty",
+    "telephone": "+1-951-240-8126",
+    "email": "adam@hfr.homes",
+    "url": "https://www.hendersonfamilyrealty.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Temecula",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile-bar.css">
+<!-- Vercel Web Analytics — same-origin, cookieless. Requires Analytics to be
+     enabled on the project in the Vercel dashboard. -->
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 
   :root { --black:#080A0F;--navy:#1C2B4A;--blue:#4169A8;--blue-light:#5B84C4;--blue-muted:#2A3F6B;--white:#FFFFFF;--off-white:#E8EDF5;--gray:#8B96A8;--gray-dark:#1A1F2B;--gray-mid:#252B38; }
@@ -41,7 +83,7 @@
   .btn-outline:hover{border-color:var(--blue-light);color:var(--blue-light);}
   footer{background:#050709;border-top:1px solid rgba(65,105,168,0.15);padding:60px 5% 30px;}
   .footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
-  .footer-brand img{height:50px;margin-bottom:1.25rem;}
+  .footer-brand img{height:50px;width:auto;margin-bottom:1.25rem;}
   .footer-brand p{font-size:0.8rem;color:var(--gray);line-height:1.8;max-width:280px;}
   .footer-social{display:flex;gap:0.75rem;margin-top:1.5rem;}
   .social-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(65,105,168,0.3);border-radius:2px;color:var(--gray);text-decoration:none;font-size:0.85rem;transition:all 0.2s;}
@@ -54,7 +96,7 @@
   .footer-bottom{max-width:1280px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
   .footer-bottom p{font-size:0.7rem;color:var(--gray);}
   .cb-logo-wrap{display:flex;align-items:center;gap:1rem;}
-  .cb-logo-wrap img{height:32px;opacity:0.7;}
+  .cb-logo-wrap img{height:32px;width:auto;opacity:0.7;}
   @media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.footer-grid{grid-template-columns:1fr;}}
 
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem;}
@@ -100,16 +142,27 @@
 .social-link-info{}
 .social-link-platform{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray);}
 .social-link-handle{font-size:0.88rem;font-weight:500;color:var(--white);}
+/* Honeypot — kept out of the layout and out of the tab order, but NOT
+   display:none, since some bots skip hidden fields entirely. */
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.form-error{background:rgba(224,85,85,0.1);border:1px solid rgba(224,85,85,0.4);border-radius:3px;padding:0.9rem 1.1rem;font-size:0.8rem;color:#F09B9B;margin-top:1rem;line-height:1.6;}
+.form-submit:disabled{opacity:0.6;cursor:not-allowed;}
 .success-msg{display:none;background:rgba(76,175,121,0.1);border:1px solid rgba(76,175,121,0.4);border-radius:3px;padding:1.5rem;text-align:center;margin-top:1rem;}
 .success-msg h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:0.5rem;color:#4CAF79;}
 .success-msg p{font-size:0.82rem;color:var(--gray);}
 @media(max-width:1024px){.contact-layout{grid-template-columns:1fr;}.contact-sidebar{position:static;}}
 @media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+
+.footer-legal{max-width:1280px;margin:0 auto;display:flex;align-items:flex-start;gap:1rem;padding:1.75rem 0;border-top:1px solid rgba(255,255,255,0.05);}
+.eho-mark{color:var(--gray);flex-shrink:0;margin-top:2px;}
+.footer-legal p{font-size:0.68rem;color:var(--gray);line-height:1.75;}
+.footer-legal strong{color:var(--off-white);}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 </style>
 </head>
 <body>
 <nav>
-  <div class="nav-logo"><img src="images/logo.png" alt="Henderson Family Realty"></div>
+  <div class="nav-logo"><img src="images/logo.webp" alt="Henderson Family Realty" width="126" height="52" fetchpriority="high"></div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="buy.html">Buy</a></li>
@@ -141,18 +194,30 @@
         <p class="eyebrow">Send a Message</p>
         <h2>How Can Adam Help?</h2>
         <p class="section-sub">Fill out the form and Adam will personally respond — usually within a few hours.</p>
-        <div id="contactForm">
+        <form id="contactForm" novalidate>
           <div class="form-row">
-            <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="John" /></div>
-            <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Smith" /></div>
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="John" autocomplete="given-name" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Smith" autocomplete="family-name" />
+            </div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="(951) 555-0100" /></div>
-            <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="john@email.com" /></div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(951) 555-0100" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@email.com" autocomplete="email" required />
+            </div>
           </div>
           <div class="form-group">
-            <label>I'm Looking To</label>
-            <select id="intent">
+            <label for="intent">I'm Looking To</label>
+            <select id="intent" name="intent">
               <option value="">Select your goal...</option>
               <option>Buy a Home</option>
               <option>Sell My Home</option>
@@ -164,8 +229,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label>City or Area of Interest</label>
-            <select id="area">
+            <label for="area">City or Area of Interest</label>
+            <select id="area" name="area">
               <option value="">Select area...</option>
               <option>Temecula</option>
               <option>Murrieta</option>
@@ -177,8 +242,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Your Timeline</label>
-            <select id="timeline">
+            <label for="timeline">Your Timeline</label>
+            <select id="timeline" name="timeline">
               <option value="">When are you looking to move?</option>
               <option>ASAP — I'm ready now</option>
               <option>Within 1–3 months</option>
@@ -188,21 +253,30 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Additional Details (optional)</label>
-            <textarea id="message" placeholder="Tell Adam anything that would help — budget, number of bedrooms, school preferences, questions about the market, etc."></textarea>
+            <label for="message">Additional Details (optional)</label>
+            <textarea id="message" name="message" placeholder="Tell Adam anything that would help — budget, number of bedrooms, school preferences, questions about the market, etc."></textarea>
           </div>
-          <button class="form-submit" onclick="submitForm()">Send Message to Adam →</button>
+
+          <!-- Honeypot: hidden from people, irresistible to bots. Any submission
+               with this filled is silently dropped server-side. -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+
+          <p class="form-error" id="formError" role="alert" hidden></p>
+          <button type="submit" class="form-submit" id="submitBtn">Send Message to Adam →</button>
           <p class="form-note">Your information is never shared with third parties. Adam responds personally — no automated email sequences.</p>
-        </div>
-        <div class="success-msg" id="successMsg">
+        </form>
+        <div class="success-msg" id="successMsg" role="status">
           <h3>Message Received!</h3>
-          <p>Thank you for reaching out. Adam will personally respond to you within a few hours. In the meantime, feel free to call or text at 951-240-8126.</p>
+          <p>Thank you for reaching out. Adam will personally respond to you within a few hours. In the meantime, feel free to call or text at <a href="tel:+19512408126" style="color:#4CAF79;text-decoration:none">951-240-8126</a>.</p>
         </div>
       </div>
       <div class="contact-sidebar">
         <div class="contact-card">
           <div class="agent-mini">
-            <img src="images/headshot.png" alt="Adam Henderson">
+            <img src="images/headshot.webp" alt="Adam Henderson" width="80" height="80" loading="lazy">
             <div>
               <p class="agent-mini-name">Adam Henderson</p>
               <p class="agent-mini-title">Realtor® · DRE# 02073962</p>
@@ -212,7 +286,7 @@
             <div class="c-icon">📞</div>
             <div>
               <p class="c-label">Call or Text</p>
-              <a href="tel:9512408126" class="c-value">951-240-8126</a>
+              <a href="tel:+19512408126" class="c-value">951-240-8126</a>
             </div>
           </div>
           <div class="contact-method">
@@ -240,11 +314,11 @@
         <div class="social-card">
           <h4>Follow on Social</h4>
           <div class="social-links">
-            <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" class="social-link">
+            <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-link">
               <span class="social-link-icon">f</span>
               <div class="social-link-info"><p class="social-link-platform">Facebook</p><p class="social-link-handle">@hendersonfamilyrealty</p></div>
             </a>
-            <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" class="social-link">
+            <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-link">
               <span class="social-link-icon">📷</span>
               <div class="social-link-info"><p class="social-link-platform">Instagram</p><p class="social-link-handle">@hendersonfamilyrealty</p></div>
             </a>
@@ -258,11 +332,11 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="images/logo.png" alt="Henderson Family Realty">
+      <img src="images/logo.webp" alt="Henderson Family Realty" width="121" height="50" loading="lazy">
       <p>Serving Temecula, Murrieta, Menifee, Lake Elsinore, Wildomar, and Southwest Riverside County.</p>
       <div class="footer-social">
-        <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" class="social-btn">f</a>
-        <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" class="social-btn">ig</a>
+        <a href="https://facebook.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-btn">f</a>
+        <a href="https://instagram.com/hendersonfamilyrealty" target="_blank" rel="noopener" class="social-btn">ig</a>
       </div>
     </div>
     <div class="footer-col"><h4>Navigate</h4><ul>
@@ -270,31 +344,95 @@
       <li><a href="sell.html">Sell</a></li><li><a href="contact.html">Contact</a></li>
     </ul></div>
     <div class="footer-col"><h4>Service Areas</h4><ul>
-      <li><a href="#">Temecula</a></li><li><a href="#">Murrieta</a></li>
-      <li><a href="#">Menifee</a></li><li><a href="#">Lake Elsinore</a></li>
-      <li><a href="#">Wildomar</a></li><li><a href="#">Winchester</a></li>
+      <li><a href="index.html#market">Temecula</a></li><li><a href="index.html#market">Murrieta</a></li>
+      <li><a href="index.html#market">Menifee</a></li><li><a href="index.html#market">Lake Elsinore</a></li>
+      <li><a href="index.html#market">Wildomar</a></li><li><a href="index.html#market">Winchester</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><ul>
-      <li><a href="tel:9512408126">951-240-8126</a></li>
+      <li><a href="tel:+19512408126">951-240-8126</a></li>
       <li><a href="mailto:adam@hfr.homes">adam@hfr.homes</a></li>
-      <li><a href="#">DRE# 02073962</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
     </ul></div>
   </div>
+  <div class="footer-legal">
+    <span class="eho-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 3 22 11h-3v9H5v-9H2z" stroke-linejoin="round"/>
+        <path d="M9 20v-6h6v6" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <p><strong>Equal Housing Opportunity.</strong> Adam Henderson, Realtor&reg;, CA DRE# 02073962 &mdash; Coldwell Banker Associated Brokers Realty. All information is deemed reliable but not guaranteed and should be independently verified.</p>
+  </div>
   <div class="footer-bottom">
-    <p>© 2025 Henderson Family Realty. All rights reserved. | Adam Henderson, DRE# 02073962</p>
-    <div class="cb-logo-wrap"><img src="images/cb-logo.png" alt="Coldwell Banker Associated Brokers Realty"></div>
+    <p>© <span id="year">2025</span> Henderson Family Realty. All rights reserved. | Adam Henderson, DRE# 02073962</p>
+    <div class="cb-logo-wrap"><img src="images/cb-logo.webp" alt="Coldwell Banker Associated Brokers Realty" width="120" height="32" loading="lazy"></div>
   </div>
 </footer>
+<!-- Sticky phone-only contact bar. Shared styles in mobile-bar.css. -->
+<div class="mobile-bar">
+  <a href="tel:+19512408126" class="mbar-btn mbar-call">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Adam
+  </a>
+  <a href="sms:+19512408126" class="mbar-btn mbar-text">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    Text
+  </a>
+</div>
+
 
 <script>
-function submitForm() {
-  const name = document.getElementById('fname').value;
-  const email = document.getElementById('email').value;
-  if (!name || !email) { alert('Please fill in at least your name and email.'); return; }
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  // Replace with actual form submission (Formspree, Netlify Forms, etc.)
+// Real submission to /api/contact, which emails Adam via Resend.
+// The previous version of this handler showed "Message Received!" and sent
+// nothing anywhere — every lead was silently discarded.
+const form    = document.getElementById('contactForm');
+const errorEl = document.getElementById('formError');
+const btn     = document.getElementById('submitBtn');
+
+function showError(msg) {
+  errorEl.textContent = msg;
+  errorEl.hidden = false;
+  errorEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errorEl.hidden = true;
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.page = location.pathname;
+
+  if (!String(data.fname || '').trim()) return showError('Please enter your first name.');
+  if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(String(data.email || '').trim())) {
+    return showError('Please enter a valid email address so Adam can reply.');
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const body = await res.json().catch(() => ({}));
+
+    if (!res.ok || !body.ok) {
+      throw new Error(body.error || 'Message could not be sent.');
+    }
+
+    form.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('successMsg').scrollIntoView({ block: 'center', behavior: 'smooth' });
+  } catch (err) {
+    showError(err.message || 'Something went wrong. Please call or text Adam at 951-240-8126.');
+    btn.disabled = false;
+    btn.textContent = 'Send Message to Adam →';
+  }
+});
 </script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

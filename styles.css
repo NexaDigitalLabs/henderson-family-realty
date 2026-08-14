@@ -84,8 +84,18 @@
   }
   .nav-cta:hover { background: var(--blue-light) !important; }
   .nav-cta::after { display: none !important; }
-  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  /* Button element, so it is keyboard-focusable and announced correctly. */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+  .hamburger:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 4px; }
 
   /* ── HERO ── */
   .hero {
@@ -103,16 +113,25 @@
     overflow: hidden;
     background: #080A0F;
   }
-  .hero-video-wrap iframe {
+  /* Self-hosted background video. object-fit does the "cover" work that the old
+     iframe faked with min-width/min-height, so no oversized scaling is needed.
+     The gradient beneath is what shows if the video files are absent. */
+  .hero-video-wrap {
+    background:
+      radial-gradient(ellipse 90% 70% at 30% 20%, rgba(65,105,168,0.18) 0%, transparent 60%),
+      linear-gradient(160deg, #0E1626 0%, #080A0F 55%, #0B1220 100%);
+  }
+  .hero-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 56.25vw; /* 16:9 ratio */
-    min-height: 100vh;
-    min-width: 177.78vh; /* 16:9 ratio */
-    transform: translate(-50%, -50%);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     pointer-events: none;
+    /* No opacity fade here on purpose: the browser paints the `poster` through
+       this same element, so fading it in would also hide the poster. Because the
+       poster is encoded from frame 1 of the video, the handoff to playback is
+       already seamless. */
   }
   .hero-video-overlay {
     position: absolute;
@@ -246,6 +265,7 @@
     position: relative;
     z-index: 1;
     width: 380px;
+    height: auto;
     max-width: 100%;
     border-radius: 3px;
     display: block;
@@ -288,7 +308,10 @@
     max-width: 1280px;
     margin: 0 auto;
   }
+  /* This is a <label> now (associated with #searchInput), so it needs block
+     display for the margin to apply. */
   .search-label {
+    display: block;
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -362,32 +385,60 @@
 
   /* ── MARKET DATA STRIP ── */
   .market-strip {
-    padding: 1.25rem 5%;
+    padding: 1.25rem 0;
     background: var(--gray-mid);
     border-bottom: 1px solid rgba(255,255,255,0.05);
     overflow: hidden;
+    position: relative;
   }
-  .market-strip-inner {
-    max-width: 1280px;
-    margin: 0 auto;
+  /* Fade the strip out at both edges so items enter and leave the viewport
+     rather than being visibly clipped by a hard border. */
+  .market-strip::before,
+  .market-strip::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 8%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .market-strip::before { left: 0;  background: linear-gradient(90deg, var(--gray-mid), transparent); }
+  .market-strip::after  { right: 0; background: linear-gradient(270deg, var(--gray-mid), transparent); }
+
+  /* The track holds two identical groups; the animation slides it exactly one
+     group width (-50%) then restarts, so the seam is invisible. `.is-scrolling`
+     is only added once JS has cloned the group — without JS the strip stays a
+     plain horizontally-scrollable row rather than animating into blank space. */
+  .market-strip-track {
     display: flex;
-    gap: 0;
+    width: max-content;
     align-items: center;
-    overflow-x: auto;
-    scrollbar-width: none;
   }
-  .market-strip-inner::-webkit-scrollbar { display: none; }
+  .market-strip-track.is-scrolling {
+    animation: ticker-scroll var(--ticker-duration, 60s) linear infinite;
+  }
+  .market-strip-group {
+    display: flex;
+    align-items: center;
+  }
+  /* Pausable, so a number can actually be read. */
+  .market-strip:hover .market-strip-track.is-scrolling,
+  .market-strip:focus-within .market-strip-track.is-scrolling {
+    animation-play-state: paused;
+  }
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
   .market-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0 24px;
+    padding: 0 26px;
     border-right: 1px solid rgba(255,255,255,0.08);
     white-space: nowrap;
     flex-shrink: 0;
   }
-  .market-item:first-child { padding-left: 0; }
-  .market-item:last-child { border-right: none; }
   .market-item-label {
     font-size: 0.65rem;
     letter-spacing: 0.1em;
@@ -500,6 +551,9 @@
     line-height: 1;
     margin-bottom: 0.5rem;
   }
+  /* Base state is muted grey — it only turns green/red once real YoY data has
+     loaded and the .up/.down class is applied. An unstyled placeholder should
+     never read as a positive figure. */
   .hv-change {
     font-size: 0.75rem;
     font-weight: 600;
@@ -507,7 +561,10 @@
     align-items: center;
     gap: 6px;
     margin-bottom: 1.5rem;
+    color: var(--gray);
   }
+  .hv-change.up,
+  .hv-change.down { padding: 2px 6px; border-radius: 2px; width: fit-content; }
   .hv-stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -535,46 +592,132 @@
     font-style: italic;
   }
 
-  /* ── ASSET PRICES ── */
-  .assets { background: var(--gray-dark); }
-  .assets-grid {
+  /* ── PAYMENT CALCULATOR ── */
+  .calc-card {
+    background: var(--gray-dark);
+    border: 1px solid rgba(65,105,168,0.2);
+    border-radius: 4px;
+    padding: 2.25rem;
+    margin-bottom: 2rem;
+  }
+  .calc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .calc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .calc-note {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 420px;
+  }
+  .calc-output {
+    background: rgba(65,105,168,0.1);
+    border: 1px solid rgba(65,105,168,0.3);
+    border-radius: 3px;
+    padding: 1.25rem 1.75rem;
+    min-width: 260px;
+  }
+  .calc-out-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .calc-out-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--blue-light);
+    line-height: 1;
+  }
+  .calc-out-break {
+    font-size: 0.68rem;
+    color: var(--gray);
+    margin-top: 0.6rem;
+    line-height: 1.6;
+  }
+  .calc-fields {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: rgba(65,105,168,0.1);
-    margin-top: 3rem;
-    border-radius: 4px;
-    overflow: hidden;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
   }
-  .asset-card {
-    background: var(--black);
-    padding: 2rem 1.75rem;
-    transition: background 0.3s;
-    position: relative;
-  }
-  .asset-card:hover { background: var(--gray-mid); }
-  .asset-icon {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .asset-name {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
+  .calc-field label {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gray);
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
-  .asset-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 600;
+  .calc-field input,
+  .calc-field select {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid rgba(65,105,168,0.25);
     color: var(--white);
-    margin-bottom: 0.4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 12px 14px;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
   }
-  .asset-change { font-size: 0.75rem; font-weight: 600; }
-  .asset-sub { font-size: 0.7rem; color: var(--gray); margin-top: 0.5rem; }
-  .asset-loading { color: var(--gray); font-size: 0.8rem; font-style: italic; }
+  .calc-field input:focus,
+  .calc-field select:focus { border-color: var(--blue-light); }
+  .calc-field select option { background: var(--navy); }
+  .calc-disclaimer {
+    font-size: 0.68rem;
+    color: var(--gray);
+    line-height: 1.7;
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+  .calc-disclaimer a { color: var(--blue-light); text-decoration: none; font-style: normal; }
+  .calc-disclaimer a:hover { text-decoration: underline; }
+
+  /* ── RATES SOURCE NOTE ── */
+  .rates-source {
+    background: var(--gray-dark);
+    border: 1px solid rgba(65,105,168,0.2);
+    border-radius: 4px;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .rates-source p { font-size: 0.78rem; color: var(--gray); line-height: 1.7; }
+  .rates-source strong { color: var(--off-white); }
+  .rates-source a { color: var(--blue-light); text-decoration: none; }
+  .rates-source-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid rgba(65,105,168,0.3);
+    padding: 8px 16px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .rates-source-link:hover { border-color: var(--blue-light); }
 
   /* ── MORTGAGE RATES ── */
   .rates { background: var(--black); }
@@ -632,7 +775,6 @@
     transition: all 0.2s;
   }
   .rate-cta:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
-  .rates-disclaimer { font-size: 0.65rem; color: var(--gray); margin-top: 1.5rem; font-style: italic; }
 
   /* ── ABOUT ── */
   .about { background: var(--gray-dark); }
@@ -653,8 +795,13 @@
     border: 1px solid rgba(65,105,168,0.3);
     border-radius: 4px;
   }
+  /* height:auto is REQUIRED here. The width/height attributes on the <img> act
+     as CSS presentational hints; `width:100%` overrides the width hint but the
+     height hint would otherwise stay pinned at 400px, stretching an 800x800
+     source to 500x400. Any img whose width CSS overrides must also reset height. */
   .about-photo {
     width: 100%;
+    height: auto;
     border-radius: 3px;
     position: relative;
     z-index: 1;
@@ -827,7 +974,7 @@
     gap: 3rem;
     margin-bottom: 3rem;
   }
-  .footer-brand img { height: 50px; margin-bottom: 1.25rem; }
+  .footer-brand img { height: 50px; width: auto; margin-bottom: 1.25rem; }
   .footer-brand p {
     font-size: 0.8rem;
     color: var(--gray);
@@ -870,6 +1017,29 @@
     transition: color 0.2s;
   }
   .footer-col ul li a:hover { color: var(--white); }
+  /* Fair housing + license disclosure. Required-ish for a licensed agent site;
+     confirm exact wording with your broker's compliance guidance. */
+  .footer-legal {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .eho-mark {
+    color: var(--gray);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .footer-legal p {
+    font-size: 0.68rem;
+    color: var(--gray);
+    line-height: 1.75;
+  }
+  .footer-legal strong { color: var(--off-white); }
+
   .footer-bottom {
     max-width: 1280px;
     margin: 0 auto;
@@ -887,7 +1057,7 @@
     align-items: center;
     gap: 1rem;
   }
-  .cb-logo-wrap img { height: 32px; opacity: 0.7; filter: brightness(0.8); }
+  .cb-logo-wrap img { height: 32px; width: auto; opacity: 0.7; filter: brightness(0.8); }
 
   /* ── LOADING SPINNER ── */
   .spinner {
@@ -924,6 +1094,68 @@
     border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
+  /* ── TESTIMONIALS ──
+     Cards are rendered from a data array in index.html, not hand-written here.
+     If that array is empty the whole section removes itself, so the page never
+     shows an empty "what clients say" heading with nothing under it. */
+  .testimonials { background: var(--gray-dark); padding: 100px 5%; }
+  .tm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .tm-card {
+    background: var(--black);
+    border: 1px solid rgba(65,105,168,0.15);
+    border-radius: 4px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .tm-card:hover { border-color: rgba(65,105,168,0.4); transform: translateY(-3px); }
+  .tm-stars { color: #E8A838; font-size: 0.95rem; letter-spacing: 0.15em; margin-bottom: 1.25rem; }
+  .tm-quote {
+    font-size: 0.85rem;
+    line-height: 1.85;
+    color: var(--off-white);
+    font-weight: 300;
+    flex: 1;
+  }
+  /* Hanging opening quote — decorative, so it must not land in the a11y tree
+     or a screen reader announces a stray punctuation mark before the text. */
+  .tm-quote::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: rgba(65,105,168,0.45);
+    line-height: 0;
+    vertical-align: -0.35em;
+    margin-right: 0.15em;
+  }
+  .tm-attrib {
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(65,105,168,0.15);
+  }
+  .tm-name { font-size: 0.85rem; font-weight: 600; color: var(--white); }
+  .tm-meta {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 5px;
+  }
+  .tm-source { color: var(--blue-light); }
+  .tm-footnote {
+    font-size: 0.68rem;
+    color: var(--gray);
+    margin-top: 2.5rem;
+    line-height: 1.75;
+  }
+  .tm-footnote a { color: var(--blue-light); }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     .hero-content { grid-template-columns: 1fr; }
@@ -932,18 +1164,25 @@
     .about-grid { grid-template-columns: 1fr; }
     .about-photo-wrap { max-width: 400px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .calc-fields { grid-template-columns: repeat(2, 1fr); }
+    .calc-output { min-width: 100%; }
   }
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .hv-grid { grid-template-columns: 1fr; }
-    .assets-grid { grid-template-columns: 1fr 1fr; }
     .rates-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
     .search-bar { flex-direction: column; }
     .search-bar select { border-left: none; border-top: 1px solid rgba(65,105,168,0.3); padding: 12px 16px; }
-    .search-btn { padding: 14px; }
+    .search-btn { padding: 14px; justify-content: center; }
+    .calc-card { padding: 1.5rem; }
+    .calc-fields { grid-template-columns: 1fr; }
+    .rates-source { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 480px) {
+    .calc-out-value { font-size: 2rem; }
   }
 
   /* ── FADE IN ANIMATIONS ── */
@@ -955,4 +1194,17 @@
   .fade-up.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Respect users who have asked their OS to reduce motion: show everything
+     immediately rather than animating it in, and stop the smooth-scroll jump. */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-up { opacity: 1; transform: none; transition: none; }
+    .why-card:hover { transform: none; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
