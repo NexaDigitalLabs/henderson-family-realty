@@ -17,7 +17,9 @@ Production, Preview, and Development environments.
 | `LEAD_TO_EMAIL` | optional | Your inbox | Defaults to `adam@hfr.homes` |
 | `LEAD_FROM_EMAIL` | optional | Must be on a Resend-verified domain | Defaults to `Henderson Family Realty <website@nexadigitallabs.ai>` |
 | `FRED_API_KEY` | **REQUIRED** | [fred.stlouisfed.org/docs/api/api_key.html](https://fred.stlouisfed.org/docs/api/api_key.html) — free, instant | Mortgage rate cards show "Unavailable" |
-| `RENTCAST_API_KEY` | **REQUIRED** | [rentcast.io](https://www.rentcast.io/api) — free tier | Home value cards keep their fallback numbers and say so |
+| `RENTCAST_API_KEY` | **REQUIRED** — Production only | [rentcast.io](https://www.rentcast.io/api) — free tier | The monthly pull cannot run; the cards keep the last stored figures, or their fallback numbers |
+| `CRON_SECRET` | **REQUIRED** — Production only | Any random string of 32+ characters; never reuse one | The monthly pull refuses every caller, including Vercel Cron |
+| `BLOB_READ_WRITE_TOKEN` | set by Vercel | Added when the Blob store is connected to the project | The cards show their fallback numbers |
 
 ### Sending domain — decided, not a to-do
 
@@ -266,18 +268,42 @@ regression.
 > drives mortgage pricing) and a payment calculator sits below. Publishing an
 > invented ARM rate on a licensed agent's site is not worth the exposure.
 
-### `/api/market` — RentCast
-**The free tier is 50 requests per month.** This endpoint spends 6 per refresh
-(one per zip), and is edge-cached for **4 days** — about 45 requests/month,
-just inside the limit.
+### `/api/market` — RentCast, pulled once a month
+**The free tier is 50 requests per month, and each pull spends 6** (one per zip).
+Since 2026-09-16 the site pulls on a schedule and never on a visit:
 
-`CACHE_SECONDS` in `api/market.js` is the dial. If you upgrade your RentCast
-plan, lower it. **Do not lower it on the free tier** or the data will go dark
-partway through each month.
+- **`/api/market-refresh`** is run by Vercel Cron **daily** (`vercel.json`), but
+  pulls only on the first successful run of each calendar month — **6 requests a
+  month**. A run that finds the month already stored spends nothing. If RentCast
+  fails, the next day's run asks again **for the failed markets only**, at most 3
+  attempts a month (**18 requests worst case**). It refuses any caller without
+  `CRON_SECRET`.
+- **`/api/market`**, which the homepage calls, only reads the stored copy in
+  Vercel Blob (`market/latest.json`). It can never spend a request.
+- A market that fails keeps **last month's** figures while it is retried — never
+  older. The page prints a single "as of" date, the newest across all six cards,
+  so anything older left in place would read as current; past a month that card
+  shows its reference estimate instead.
 
-Median prices don't move day to day, so a 4-day cache costs nothing in
-accuracy. The response always carries the true upstream `asOf` date, and the
-page prints it — the site never claims to be fresher than it is.
+**Why not a cache header.** Until 2026-09-16 `/api/market` called RentCast itself
+behind a 4-day edge cache, which was supposed to mean ~45 requests a month. It made
+**301** in the month to Sep 11 and ran up an overage bill: every deployment empties
+Vercel's cache, and Vercel's cache is kept per region and best-effort — a response
+requested about once a day "may be evicted". A cache header can never cap a paid
+API. Do not move a RentCast call back into a page request.
+
+**Environment variables (Production only):** `RENTCAST_API_KEY` (read by the
+monthly job and nothing else), `CRON_SECRET`, and `BLOB_READ_WRITE_TOKEN` (added by
+Vercel when the `henderson-family-realty-market` Blob store was connected).
+
+**Run a pull by hand:** `vercel crons run /api/market-refresh`. It still obeys the
+once-a-month rule, so a second run the same month answers "This month is already
+stored." and spends nothing.
+
+**When live MLS data replaces RentCast**, change `api/_market-source.js` only —
+keep its `SOURCE` and `fetchMarkets()` shape and the schedule, storage and page all
+stay as they are. The card footer in `index.html` names RentCast and will need its
+wording changed, and check the MLS's rules on publishing market statistics first.
 
 ---
 

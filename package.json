@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Henderson Family Realty — Temecula & Murrieta real estate",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@vercel/blob": "^2.8.0"
+  }
 }
