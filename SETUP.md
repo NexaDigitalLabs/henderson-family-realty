@@ -296,7 +296,12 @@ API. Do not move a RentCast call back into a page request.
 monthly job and nothing else), `CRON_SECRET`, and `BLOB_READ_WRITE_TOKEN` (added by
 Vercel when the `henderson-family-realty-market` Blob store was connected).
 
-**Run a pull by hand:** `vercel crons run /api/market-refresh`. It still obeys the
+**Prove the rules without spending anything:** `node tools/market-refresh-check.mjs`
+(13 scenarios against a stand-in store and a stand-in RentCast that counts requests;
+`--broken` must go red). Run it after any change to `api/_market-refresh.js`.
+
+**Run a pull by hand:** `vercel crons run /api/market-refresh` (from Git Bash:
+`MSYS_NO_PATHCONV=1 vercel crons run /api/market-refresh`). It still obeys the
 once-a-month rule, so a second run the same month answers "This month is already
 stored." and spends nothing.
 
